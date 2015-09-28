@@ -1,6 +1,7 @@
 var isaac = new Firebase("https://isaacotherrien.firebaseio.com/");
 
 var portfolio = angular.module("portfolio", ["firebase"]);
+var a;
 
 portfolio.controller("HeaderCtrl", function($scope, $firebaseObject){
 	var sync = $firebaseObject(isaac.child("Me"));

@@ -48,6 +48,11 @@
 		-webkit-text-size-adjust: none;
 	}
 
+/* Customized */
+	p{
+		text-align:justify;
+		text-justify:inter-word;
+	}
 /* Box Model */
 
 	*, *:before, *:after {
@@ -1579,13 +1584,13 @@
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #49bf9d;
+		color: #BC3C3C;
 		text-decoration: none;
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #49bf9d !important;
+			color: #BC3C3C !important;
 			text-decoration: none;
 		}
 
@@ -1792,7 +1797,7 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #49bf9d;
+			border-color: #BC3C3C;
 		}
 
 	.select-wrapper {
@@ -1902,7 +1907,7 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #49bf9d;
+			border-color: #BC3C3C;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2350,8 +2355,8 @@
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			border-color: #49bf9d;
-			color: #49bf9d !important;
+			border-color: #BC3C3C;
+			color: #BC3C3C !important;
 		}
 
 		input[type="submit"]:active,
@@ -2359,8 +2364,8 @@
 		input[type="button"]:active,
 		.button:active {
 			background-color: rgba(73, 191, 157, 0.1);
-			border-color: #49bf9d;
-			color: #49bf9d !important;
+			border-color: #BC3C3C;
+			color: #BC3C3C !important;
 		}
 
 		input[type="submit"].icon,
@@ -2405,8 +2410,8 @@
 		input[type="reset"].special,
 		input[type="button"].special,
 		.button.special {
-			background-color: #49bf9d;
-			border-color: #49bf9d;
+			background-color: #BC3C3C;
+			border-color: #BC3C3C;
 			color: #ffffff !important;
 		}
 
@@ -2414,8 +2419,8 @@
 			input[type="reset"].special:hover,
 			input[type="button"].special:hover,
 			.button.special:hover {
-				background-color: #5cc6a7;
-				border-color: #5cc6a7;
+				background-color: #962226;
+				border-color: #962226;
 			}
 
 			input[type="submit"].special:active,

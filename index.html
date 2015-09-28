@@ -8,6 +8,7 @@
 	<head>
 		<title>Isaac's Portfolio</title>
 		<meta charset="utf-8" />
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,8 +19,8 @@
 			<header id="header" ng-controller="HeaderCtrl">
 				<a href="#" class="image avatar"><img ng-src="{{info.img}}" alt="" /></a>
 				<h1><strong>I am {{info.name}}</strong>,<br />
-				<span ng-repeat="desc in data.desc">
-				{{info}}<br />
+				<span ng-repeat="desc in info.desc">
+				{{desc.line}}<br />
 				</span></h1>
 			</header>
 
@@ -66,8 +67,8 @@
 										<div class="12u$"><textarea id="userMessage" name="message" id="message" placeholder="Message" rows="4"></textarea></div>
 									</div>
 								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" onclick="save()" /></li>
+								<ul class="actions special">
+									<li><input class="button special" type="submit" value="Send Message" onclick="save()" /></li>
 								</ul>
 							</div>
 							<div class="4u$ 12u$(small)">
@@ -92,8 +93,7 @@
 					</section>
 
 				<!-- Four -->
-				<!--
-					<section id="four">
+				<!--	<section id="four">
 						<h2>Elements</h2>
 
 						<section>
@@ -409,7 +409,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						</section>
 
 					</section>
-				-->
 
 			</div>
 
