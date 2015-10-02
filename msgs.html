@@ -4,7 +4,7 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html ng-app="portfolio">
+<html id="myPage" ng-app="portfolio">
 	<head>
 		<title>Isaac's Portfolio</title>
 		<meta charset="utf-8" />
@@ -22,7 +22,7 @@
 				<h1><strong><span contenteditable="{{editable.editable}}" location="Me prename">{{info.prename}}</span>
 				<span contenteditable="{{editable.editable}}" location="Me name">{{info.name}}</span></strong>,<br />
 				<span ng-repeat="desc in info.desc">
-				<span contenteditable="{{editable.editable}}" location="Me desc {{$index}}">{{desc.line}}</span><br />
+				<span contenteditable="{{editable.editable}}" location="Me desc {{$index}} line">{{desc.line}}</span><br />
 				</span></h1>
 			</header>
 
@@ -30,25 +30,26 @@
 			<div id="main">
 
 				<!-- One -->
-					<section id="one" ng-controller="AdminCtrl">
+					<section id="one" ng-controller="MsgCtrl">
 						<header class="major">
-							<h2>Login</h2>
+							<h2>Messages</h2>
 						</header>
-						<span ng-show="!admin.editable">
-							<div class="6u 12u$(xsmall)"><input id="userName" type="text" name="name" id="name" placeholder="Name" /></div>
-							<div class="6u$ 12u$(xsmall)"><input id="userPassword" type="password" name="password" id="password" placeholder="Password" onkeypress="search(event)" /></div>
-							<br />
+						<span ng-repeat="message in messages" ng-show="editable.editable">
+							<header>
+								<h2>{{message.name}}</h2>
+								<p>{{message.message}}</p>
+							</header>
 							<ul class="actions">
-								<li><a href="#" class="button" onclick="login()">Login</a></li>
+								<li><a href="mailto:{{message.email}}&subject=Reply from Isaac" class="button special small fit">Email back</a></li>
 							</ul>
 						</span>
-						<span ng-show="admin.editable">
-							<ul class="actions">
-								<li><a href="#" class="button" onclick="logout()">Logout</a></li>
-							</ul>
+						<span ng-show="!editable.editable">
+							<p>You shouldn't be here!</p>
 						</span>
+						<ul class="actions">
+								<li><a href="index.html" class="button special fit">Back to index</a></li>
+						</ul>
 					</section>
-
 			</div>
 
 		<!-- Footer -->

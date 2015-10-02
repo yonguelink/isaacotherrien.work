@@ -37,6 +37,12 @@ portfolio.controller("AdminCtrl", function($scope, $firebaseObject){
 	$scope.admin = editable($firebaseObject);
 });
 
+portfolio.controller("MsgCtrl", function($scope, $firebaseObject){
+	$scope.messages = $firebaseObject(isaac.child("messages"));
+	$scope.editable = editable($firebaseObject);
+});
+
+
 function editable($firebaseObject){
 	if(adminAuth)
 		return $firebaseObject(isaac.child(adminAuth.uid));
@@ -61,6 +67,10 @@ function save(){
 	}
 	userMsg = {"name":name, "email":email, "message":message};
 	isaac.child("messages").push(userMsg);
+	alert("Message sent!");
+	$("#userName").val("");
+	$("#userEmail").val("");
+	$("#userMessage").val("");
 }
 
 function search(e){
