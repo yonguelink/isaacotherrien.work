@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html ng-app="portfolio">
+	<head>
+		<title>Isaac's Portfolio</title>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body id="top">
+		<!-- Header -->
+			<header id="header" ng-controller="HeaderCtrl">
+				<a href="#" class="image avatar"><img ng-src="{{info.img}}" alt="" /></a>
+				<h1><strong><span contenteditable="{{editable.editable}}" location="Me prename">{{info.prename}}</span>
+				<span contenteditable="{{editable.editable}}" location="Me name">{{info.name}}</span></strong>,<br />
+				<span ng-repeat="desc in info.desc">
+				<span contenteditable="{{editable.editable}}" location="Me desc {{$index}}">{{desc.line}}</span><br />
+				</span></h1>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one" ng-controller="AdminCtrl">
+						<header class="major">
+							<h2>Login</h2>
+						</header>
+						<span ng-show="!admin.editable">
+							<div class="6u 12u$(xsmall)"><input id="userName" type="text" name="name" id="name" placeholder="Name" /></div>
+							<div class="6u$ 12u$(xsmall)"><input id="userPassword" type="password" name="password" id="password" placeholder="Password" onkeypress="search(event)" /></div>
+							<br />
+							<ul class="actions">
+								<li><a href="#" class="button" onclick="login()">Login</a></li>
+							</ul>
+						</span>
+						<span ng-show="admin.editable">
+							<ul class="actions">
+								<li><a href="#" class="button" onclick="logout()">Logout</a></li>
+							</ul>
+						</span>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" ng-controller="FooterCtrl">
+				<ul class="icons">
+					<li ng-repeat="icon in footer.icons">
+						<a ng-href="{{icon.url}}" class="icon fa-{{icon.name}}">
+							<span class="label">{{icon.readName}}</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; {{footer.copyright.who}}</li><li>Code: <a href="https://github.com/yonguelink/isaacotherrien.work">Repo</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.firebase.com/js/client/2.3.0/firebase.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+			<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+			<script src="assets/js/isaacotherrien.js"></script>
+	</body>
+</html>
