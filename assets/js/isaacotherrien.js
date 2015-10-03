@@ -39,9 +39,15 @@ portfolio.controller("AdminCtrl", function($scope, $firebaseObject){
 
 portfolio.controller("MsgCtrl", function($scope, $firebaseObject){
 	$scope.messages = $firebaseObject(isaac.child("messages"));
+	$scope.emailBack = function(message){
+		isaac.child("messages").child(message.id).update({replied:true});
+		window.location = "mailto:"+message.email+"&subject=Reply from Isaac&from=isaac@isaacotherrien.work";
+	};
+	$scope.delete = function(message){
+		isaac.child("messages").child(message.id).update({deleted:true});
+	};
 	$scope.editable = editable($firebaseObject);
 });
-
 
 function editable($firebaseObject){
 	if(adminAuth)
@@ -66,7 +72,9 @@ function save(){
 		alert("You must enter a significative message.");
 	}
 	userMsg = {"name":name, "email":email, "message":message};
-	isaac.child("messages").push(userMsg);
+	msg = isaac.child("messages").push(userMsg);
+	msgId = msg.key();
+	isaac.child("messages").child(msgId).update({'id':msgId});
 	alert("Message sent!");
 	$("#userName").val("");
 	$("#userEmail").val("");
@@ -81,6 +89,7 @@ function search(e){
 
 function saveAllText(){
 	$('#myPage').contents().find("span[contenteditable='true']").each(function(){
+		console.log(this);
 		loc = this.attributes.getNamedItem("location");
 		val = this.innerHTML;
 		tempIsaac = isaac;
@@ -96,8 +105,15 @@ function saveAllText(){
 				}
 				if(pos == loc.length-1){
 					toSend = {};
-					toSend[child] = val;
-					tempIsaac.update(toSend);
+					//Don't save the new recent work template if nothing has changed
+					if(!(val === "Title" || val === "Desc" || val === "Image" | val === "Link")){
+						while(val.indexOf("&nbsp;") > -1)
+							val = val.replace("&nbsp;", "");
+						while(val.indexOf("amp;") > -1)
+							val = val.replace("amp;", "");
+						toSend[child] = val;
+						tempIsaac.update(toSend);
+					}
 				}else
 					tempIsaac = tempIsaac.child(child);
 			}

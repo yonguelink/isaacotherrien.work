@@ -18,7 +18,7 @@
 	<body id="top">
 		<!-- Header -->
 			<header id="header" ng-controller="HeaderCtrl">
-				<a href="#" class="image avatar"><img ng-src="{{info.img}}" alt="" /></a>
+				<a href="index.html" class="image avatar"><img ng-src="{{info.img}}" alt="" /></a>
 				<h1><strong><span contenteditable="{{editable.editable}}" location="Me prename">{{info.prename}}</span>
 				<span contenteditable="{{editable.editable}}" location="Me name">{{info.name}}</span></strong>,<br />
 				<span ng-repeat="desc in info.desc">
@@ -35,13 +35,18 @@
 							<h2>Messages</h2>
 						</header>
 						<span ng-repeat="message in messages" ng-show="editable.editable">
-							<header>
-								<h2>{{message.name}}</h2>
-								<p>{{message.message}}</p>
-							</header>
-							<ul class="actions">
-								<li><a href="mailto:{{message.email}}&subject=Reply from Isaac" class="button special small fit">Email back</a></li>
-							</ul>
+							<span ng-show="!message.deleted">
+								<header>
+									<h2>{{message.name}}</h2>
+									<p>{{message.message}}</p>
+								</header>
+								<ul class="actions" ng-show="!message.replied">
+									<li><a ng-click="emailBack(message)" class="button special small fit">Email back</a></li>
+								</ul>
+								<ul class="actions" ng-show="message.replied">
+									<li><a ng-click="delete(message)" class="button small fit">Delete</a></li>
+								</ul>
+							</span>
 						</span>
 						<span ng-show="!editable.editable">
 							<p>You shouldn't be here!</p>
