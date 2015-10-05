@@ -1,4 +1,22 @@
+var loc = window.location.search.substring(1).split("&");
+lang = "en";
+
+if(loc.length > 0){
+	for(i in loc){
+		val = loc[i].split("=");
+		if(val[0] == "l"){
+			lang = val[1];
+		}
+	}
+	if(lang !== "fr") lang="en";
+}else{
+	lang = window.navigator.language || window.navigator.userLanguage;
+	if(lang.indexOf("fr") > -1)lang = "fr";
+	else lang = "en";
+}
+
 var isaac = new Firebase("https://isaacotherrien.firebaseio.com/");
+isaac = isaac.child(lang);
 
 var portfolio = angular.module("portfolio", ["firebase"]);
 var adminAuth = isaac.getAuth();
