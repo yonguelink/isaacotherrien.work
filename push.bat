@@ -6,8 +6,8 @@ if %ask% == y (
 )
 set /p gitdo=Push to git (y/n)? 
 if %gitdo% == y (
-	git add .
 	set /p msg=Git commit message : 
+	git add .
 	git commit -m "%msg%"
 	git push
 )
