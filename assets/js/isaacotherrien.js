@@ -67,6 +67,12 @@ portfolio.controller("MsgCtrl", function($scope, $firebaseObject){
 	$scope.editable = editable($firebaseObject);
 });
 
+function switchLang(){
+	lang = lang == "fr" ? "en" : "fr";
+	page = "/?l=" + lang;
+	redirect(page);
+}
+
 function editable($firebaseObject){
 	if(adminAuth)
 		return $firebaseObject(isaac.child(adminAuth.uid));

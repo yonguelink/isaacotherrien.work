@@ -6,7 +6,7 @@
 -->
 <html id="myPage" ng-app="portfolio">
 	<head>
-		<title>Isaac's Portfolio</title>
+		<title ng-controller="HeaderCtrl">{{info.title}}</title>
 		<meta charset="utf-8" />
 		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,7 +17,9 @@
 	</head>
 	<body id="top">
 		<!-- Header -->
+			
 			<header id="header" ng-controller="HeaderCtrl">
+				<span id="lang" ng-controller="HeaderCtrl" onclick="switchLang()">{{info.lang}}</span>
 				<a href="index.html" class="image avatar"><img ng-src="{{info.img}}" alt="" /></a>
 				<h1><strong><span contenteditable="{{editable.editable}}" location="Me prename">{{info.prename}}</span>
 				<span contenteditable="{{editable.editable}}" location="Me name">{{info.name}}</span></strong>,<br />
@@ -28,11 +30,10 @@
 
 		<!-- Main -->
 			<div id="main">
-
 				<!-- One -->
 					<section id="one" ng-controller="OneCtrl">
 						<header class="major">
-							<h2>About me</h2>
+							<h2>{{aboutMe.title}}</h2>
 						</header>
 						<p><span contenteditable="{{editable.editable}}" location="AboutMe presentation">{{aboutMe.presentation}}</span></p>
 						<p>
@@ -47,8 +48,8 @@
 
 				<!-- Two -->
 					<section id="two" ng-controller="RecentCtrl">
-						<h2>Recent Work</h2>
-						<p>Click on the images to have more information, could be code (GitHub repo), images or the actual product.</p>
+						<h2>{{works.title}}</h2>
+						<p>{{works.desc}}</p>
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item" ng-repeat="work in works">
 								<a ng-href="{{work.link}}" target="_blank" class="image fit thumb"><img ng-src="{{work.img}}" alt="" /></a>
@@ -63,25 +64,25 @@
 							</article>
 						</div>
 						<ul class="actions">
-							<li><a href="https://github.com/yonguelink/" class="button">Full Portfolio</a></li>
+							<li><a href="https://github.com/yonguelink/" class="button">{{works.portfolio}}</a></li>
 						</ul>
 					</section>
 
 				<!-- Three -->
 					<section id="three" ng-controller="InTouchCtrl">
-						<h2>Get In Touch</h2>
+						<h2>{{touch.title}}</h2>
 						<p><span contenteditable="{{editable.editable}}" location="GetInTouch desc">{{touch.desc}}</span></p>
 						<div class="row">
 							<div class="8u 12u$(small)">
 								<form method="post" action="#">
 									<div class="row uniform 50%">
-										<div class="6u 12u$(xsmall)"><input id="userName" type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="6u$ 12u$(xsmall)"><input id="userEmail" type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="12u$"><textarea id="userMessage" name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+										<div class="6u 12u$(xsmall)"><input id="userName" type="text" name="name" id="name" placeholder="{{touch.name}}" /></div>
+										<div class="6u$ 12u$(xsmall)"><input id="userEmail" type="email" name="email" id="email" placeholder="{{touch.email}}" /></div>
+										<div class="12u$"><textarea id="userMessage" name="message" id="message" placeholder="{{touch.message}}" rows="4"></textarea></div>
 									</div>
 								</form>
 								<ul class="actions special">
-									<li><input class="button special" type="submit" value="Send Message" onclick="save()" /></li>
+									<li><input class="button special" type="submit" value="{{touch.button}}" onclick="save()" /></li>
 								</ul>
 							</div>
 							<div class="4u$ 12u$(small)">
