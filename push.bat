@@ -5,5 +5,6 @@ if %ask% == y (
 	git add .
 	set /p msg=Git commit message : 
 	git commit -m "%msg%"
-	echo "%msg%"
+	git push
+	call doPush.bat
 )
