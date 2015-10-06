@@ -12,4 +12,5 @@ if %gitdo% == y (
 	git add .
 	git commit -m "!msg!"
 	git push
+	echo yonguelink
 )
