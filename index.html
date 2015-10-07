@@ -6,7 +6,7 @@
 -->
 <html id="myPage" ng-app="portfolio">
 	<head>
-		<title ng-controller="HeaderCtrl">{{info.title}}</title>
+		<title ng-controller="HeaderCtrl">Isaac</title>
 		<meta charset="utf-8" />
 		<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,9 @@
 		<!-- Header -->
 			
 			<header id="header" ng-controller="HeaderCtrl">
-				<span id="lang" ng-controller="HeaderCtrl" onclick="switchLang()">{{info.lang}}</span>
+				<span id="lang" ng-controller="HeaderCtrl" onclick="switchLang()">
+					<span contenteditable="{{editable.editable}}" location="Me lang">{{info.lang}}</span>
+				</span>
 				<a href="index.html" class="image avatar"><img ng-src="{{info.img}}" alt="" /></a>
 				<h1><strong><span contenteditable="{{editable.editable}}" location="Me prename">{{info.prename}}</span>
 				<span contenteditable="{{editable.editable}}" location="Me name">{{info.name}}</span></strong>,<br />
@@ -33,7 +35,9 @@
 				<!-- One -->
 					<section id="one" ng-controller="OneCtrl">
 						<header class="major">
-							<h2>{{aboutMe.title}}</h2>
+							<h2>
+								<span contenteditable="{{editable.editable}}" location="AboutMe title">{{aboutMe.title}}</span>
+							</h2>
 						</header>
 						<p><span contenteditable="{{editable.editable}}" location="AboutMe presentation">{{aboutMe.presentation}}</span></p>
 						<p>
@@ -48,7 +52,9 @@
 
 				<!-- Two -->
 					<section id="two" ng-controller="RecentCtrl">
-						<h2>{{works.title}}</h2>
+						<h2>
+							<span contenteditable="{{editable.editable}}" location="RecentWork title">{{works.title}}</span>
+						</h2>
 						<p>{{works.desc}}</p>
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item" ng-repeat="work in works">
@@ -64,20 +70,24 @@
 							</article>
 						</div>
 						<ul class="actions">
-							<li><a href="https://github.com/yonguelink/" class="button">{{works.portfolio}}</a></li>
+							<li><a href="https://github.com/yonguelink/" class="button">
+								<span contenteditable="{{editable.editable}}" location="RecentWork portfolio">{{works.portfolio}}</span>
+							</a></li>
 						</ul>
 					</section>
 
 				<!-- Three -->
 					<section id="three" ng-controller="InTouchCtrl">
-						<h2>{{touch.title}}</h2>
+						<h2>
+							<span contenteditable="{{editable.editable}}" location="GetInTouch title">{{touch.title}}</span>
+						</h2>
 						<p><span contenteditable="{{editable.editable}}" location="GetInTouch desc">{{touch.desc}}</span></p>
 						<div class="row">
 							<div class="8u 12u$(small)">
 								<form method="post" action="#">
 									<div class="row uniform 50%">
 										<div class="6u 12u$(xsmall)"><input id="userName" type="text" name="name" id="name" placeholder="{{touch.name}}" /></div>
-										<div class="6u$ 12u$(xsmall)"><input id="userEmail" type="email" name="email" id="email" placeholder="{{touch.email}}" /></div>
+										<div class="6u$ 12u$(xsmall)"><input id="userEmail" type="email" name="email" id="email" placeholder="{{touch.mail}}" /></div>
 										<div class="12u$"><textarea id="userMessage" name="message" id="message" placeholder="{{touch.message}}" rows="4"></textarea></div>
 									</div>
 								</form>
@@ -88,7 +98,7 @@
 							<div class="4u$ 12u$(small)">
 								<ul class="labeled-icons">
 									<li>
-										<h3 class="icon fa-home"><span class="label">Address</span></h3>
+										<h3 class="icon fa-home"><span class="label">Adress</span></h3>
 										<span contenteditable="{{editable.editable}}" location="GetInTouch adr street">{{touch.adr.street}}</span><br />
 										<span contenteditable="{{editable.editable}}" location="GetInTouch adr town">{{touch.adr.town}}</span>, <span contenteditable="{{editable.editable}}">{{touch.adr.postalCode}}</span><br />
 										<span contenteditable="{{editable.editable}}" location="GetInTouch adr country">{{touch.adr.country}}</span>

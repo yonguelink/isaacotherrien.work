@@ -130,7 +130,7 @@ function saveAllText(){
 				if(pos == loc.length-1){
 					toSend = {};
 					//Don't save the new recent work template if nothing has changed
-					if(!(val === "Title" || val === "Desc" || val === "Image" | val === "Link")){
+					if(!(val === "Title" || val === "Desc" || val === "Image" || val === "Link" || val == "")){
 						while(val.indexOf("&nbsp;") > -1)
 							val = val.replace("&nbsp;", "");
 						while(val.indexOf("amp;") > -1)
@@ -143,7 +143,7 @@ function saveAllText(){
 			}
 		}
 	});
-	redirect("index.html");
+	redirect("index.html" + window.location.search);
 }
 
 function login(){
