@@ -57,6 +57,7 @@
 						</h2>
 						<p>{{works.desc}}</p>
 						<div class="row">
+							<style>.image.thumb:after{content:'{{works.imgClick}}'}</style>
 							<article class="6u 12u$(xsmall) work-item" ng-repeat="work in works">
 								<a ng-href="{{work.link}}" target="_blank" class="image fit thumb"><img ng-src="{{work.img}}" alt="" /></a>
 								<h3><span contenteditable="{{editable.editable}}" location="RecentWork {{$index}} title">{{work.title}}</span></h3>
