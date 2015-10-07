@@ -19,8 +19,8 @@
 		<!-- Header -->
 			
 			<header id="header" ng-controller="HeaderCtrl">
-				<span id="lang" ng-controller="HeaderCtrl" onclick="switchLang()">
-					<span contenteditable="{{editable.editable}}" location="Me lang">{{info.lang}}</span>
+				<span id="lang" ng-controller="HeaderCtrl">
+					<span contenteditable="{{editable.editable}}" location="Me lang" onclick="switchLang()">{{info.lang}}</span>
 				</span>
 				<a href="index.html" class="image avatar"><img ng-src="{{info.img}}" alt="" /></a>
 				<h1><strong><span contenteditable="{{editable.editable}}" location="Me prename">{{info.prename}}</span>
