@@ -1,0 +1,17 @@
+/* Customized */
+p{
+	text-align:justify;
+	text-justify:inter-word;
+}
+
+#header #lang{
+	color: rgba(255, 255, 255, 0.5);
+    height: 100%;
+	left:0;
+    right: 0;
+    padding: 0.5% 0 0 0.5% !important;
+    position: fixed;
+    text-align: left;
+    top: 0;
+    width: 35%;
+}
