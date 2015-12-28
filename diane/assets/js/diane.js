@@ -1,5 +1,5 @@
 var loc = window.location.search.substring(1).split("&");
-lang = "en";
+lang = "fr";
 
 if(loc.length > 0){
 	for(i in loc){
@@ -8,14 +8,14 @@ if(loc.length > 0){
 			lang = val[1];
 		}
 	}
-	if(lang !== "fr") lang="en";
+	if(lang !== "fr") lang="fr";
 }else{
 	lang = window.navigator.language || window.navigator.userLanguage;
 	if(lang.indexOf("fr") > -1)lang = "fr";
-	else lang = "en";
+	else lang = "fr";
 }
 
-var isaac = new Firebase("https://isaacotherrien.firebaseio.com/");
+var isaac = new Firebase("https://dianeouellet.firebaseio.com/");
 isaac = isaac.child(lang);
 
 var portfolio = angular.module("portfolio", ["firebase"]);
@@ -59,7 +59,7 @@ portfolio.controller("MsgCtrl", function($scope, $firebaseObject){
 	$scope.messages = $firebaseObject(isaac.child("messages"));
 	$scope.emailBack = function(message){
 		isaac.child("messages").child(message.id).update({replied:true});
-		window.location = "mailto:"+message.email+"&subject=Reply from Isaac&from=isaac@isaacotherrien.work";
+		window.location = "mailto:"+message.email+"&subject=Reply from Diane&from=diane@dianeouellet.ca";
 	};
 	$scope.delete = function(message){
 		isaac.child("messages").child(message.id).update({deleted:true});
@@ -112,8 +112,8 @@ function search(e){
 }
 
 function saveAllText(){
+	console.log("lalal");
 	$('#myPage').contents().find("span[contenteditable='true']").each(function(){
-		console.log(this);
 		loc = this.attributes.getNamedItem("location");
 		val = this.innerHTML;
 		tempIsaac = isaac;
@@ -147,7 +147,7 @@ function saveAllText(){
 }
 
 function login(){
-	userName = $("#userName").val() + "@isaacotherrien.work";
+	userName = $("#userName").val() + "@dianeouellet.ca";
 	userPassword = $("#userPassword").val();
 	isaac.authWithPassword({
 		email    : userName,
