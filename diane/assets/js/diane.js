@@ -59,7 +59,7 @@ portfolio.controller("MsgCtrl", function($scope, $firebaseObject){
 	$scope.messages = $firebaseObject(isaac.child("messages"));
 	$scope.emailBack = function(message){
 		isaac.child("messages").child(message.id).update({replied:true});
-		window.location = "mailto:"+message.email+"&subject=Reply from Diane&from=diane@dianeouellet.ca";
+		window.location = "mailto:"+message.email+"&subject=Réponse de Diane Ouellet&from=diane@dianeouellet.ca";
 	};
 	$scope.delete = function(message){
 		isaac.child("messages").child(message.id).update({deleted:true});
@@ -82,24 +82,24 @@ function editable($firebaseObject){
 function save(){
 	name = $("#userName").val();
 	if(name == ""){
-		alert("You must have a name.");
+		alert("Vous devez avoir un nom.");
 		return;
 	}
 	email = $("#userEmail").val();
 	var reg = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	if(!reg.test(email)){
-		alert("You must have a valid email.");
+		alert("Vous devez avoir un courriel valide.");
 		return;
 	}
 	message = $("#userMessage").val();
 	if(message.length <= 2){
-		alert("You must enter a significative message.");
+		alert("Vous devez entrer un message significatif.");
 	}
 	userMsg = {"name":name, "email":email, "message":message};
 	msg = isaac.child("messages").push(userMsg);
 	msgId = msg.key();
 	isaac.child("messages").child(msgId).update({'id':msgId});
-	alert("Message sent!");
+	alert("Message envoyé!");
 	$("#userName").val("");
 	$("#userEmail").val("");
 	$("#userMessage").val("");
@@ -112,7 +112,6 @@ function search(e){
 }
 
 function saveAllText(){
-	console.log("lalal");
 	$('#myPage').contents().find("span[contenteditable='true']").each(function(){
 		loc = this.attributes.getNamedItem("location");
 		val = this.innerHTML;
@@ -120,7 +119,7 @@ function saveAllText(){
 		if(loc){
 			loc = loc.nodeValue.split(" ");
 			for(pos in loc){
-				child = loc[pos];
+				var child = loc[pos];
 				if(!isNaN(child)){
 					if(child < 10)
 						child = "0" + child;
