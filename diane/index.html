@@ -24,7 +24,7 @@
 				</span>
 				<a href="index.html" class="image avatar"><img ng-src="{{info.img}}" alt="" /></a>
 				<h1><strong><span contenteditable="{{editable.editable}}" location="Me prename">{{info.prename}}</span>
-				<span contenteditable="{{editable.editable}}" location="Me name">{{info.name}}</span></strong>,<br />
+				<span contenteditable="{{editable.editable}}" location="Me name">{{info.name}}</span></strong><br />
 				<span ng-repeat="desc in info.desc">
 				<span contenteditable="{{editable.editable}}" location="Me desc {{$index}} line">{{desc.line}}</span><br />
 				</span></h1>
@@ -42,7 +42,7 @@
 						<p><span contenteditable="{{editable.editable}}" location="AboutMe presentation">{{aboutMe.presentation}}</span></p>
 						<p>
 							<span contenteditable="{{editable.editable}}" location="AboutMe cv txt">{{aboutMe.cv.txt}}</span>
-							<a href="{{aboutMe.cv.link}}"><span contenteditable="{{editable.editable}}" location="AboutMe cv download">{{aboutMe.cv.download}}</span></a>.
+							<a href="{{aboutMe.cv.link}}" target="_blank"><span contenteditable="{{editable.editable}}" location="AboutMe cv download">{{aboutMe.cv.download}}</span></a>.
 						</p>
 						<!-- Buttons
 						<ul class="actions">
@@ -131,7 +131,7 @@
 					</li>
 					<li>
 						<span contenteditable="{{editable.editable}}" location="Footer copyright info">{{footer.copyright.info}}</span>
-						<a href="https://github.com/yonguelink/isaacotherrien.work">Code</a>
+						<a target="_blank" href="https://github.com/yonguelink/isaacotherrien.work">Code</a>
 					</li>
 				</ul>
 			</footer>
