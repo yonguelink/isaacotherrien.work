@@ -80,7 +80,7 @@ function editable($firebaseObject){
 }
 
 function save(){
-	name = $("#userName").val();
+	var name = $("#userName").val();
 	if(name == ""){
 		alert("Vous devez avoir un nom.");
 		return;
@@ -95,7 +95,9 @@ function save(){
 	if(message.length <= 2){
 		alert("Vous devez entrer un message significatif.");
 	}
-	userMsg = {"name":name, "email":email, "message":message};
+	var date = new Intl.DateTimeFormat("en-CA", { dateStyle: 'short', timeStyle: 'short' }).format(new Date());
+	userMsg = {"name":name, "email":email, "message":message, "date": date};
+	console.log(userMsg);
 	msg = isaac.child("messages").push(userMsg);
 	msgId = msg.key();
 	isaac.child("messages").child(msgId).update({'id':msgId});
