@@ -1,1 +1,0 @@
-aws s3 sync . s3://isaacotherrien.work --exclude ".git/*" --exclude "LICENSE" --exclude "*.md" --exclude ".git*" --exclude "*.bat"
