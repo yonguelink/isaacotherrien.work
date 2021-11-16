@@ -1,0 +1,10 @@
+{
+  "name": "dianeouellet.ca",
+  "version": "1.0.0",
+  "description": "Diane's website",
+  "main": "index.html",
+  "author": "Isaac Ouellet-Therrien",
+  "dependencies": {
+    "nodemailer": "^6.7.1"
+  }
+}
