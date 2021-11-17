@@ -112,15 +112,18 @@ function save(){
 
 	postMessage(userMsg)
 		.then(function() {
-			// msg = isaac.child("messages").push(userMsg);
-			// msgId = msg.key();
-			// isaac.child("messages").child(msgId).update({'id':msgId});
+			msg = isaac.child("messages").push(userMsg);
+			msgId = msg.key();
+			isaac.child("messages").child(msgId).update({'id':msgId});
 			alert("Message envoyé!");
-			// $("#userName").val("");
-			// $("#userEmail").val("");
-			// $("#userMessage").val("");
+			$("#userName").val("");
+			$("#userEmail").val("");
+			$("#userMessage").val("");
 		})
 		.catch(function () {
+			msg = isaac.child("messages").push(userMsg);
+			msgId = msg.key();
+			isaac.child("messages").child(msgId).update({'id':msgId});
 			alert("Une erreure est survenue, veuillez vérifier votre message et re-essayer. Vous pouvez écrire à ouelletdiane5@gmail.com directement.")
 		});
 }
