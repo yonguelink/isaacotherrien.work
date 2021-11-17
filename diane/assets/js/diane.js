@@ -79,6 +79,18 @@ function editable($firebaseObject){
 	return $firebaseObject(isaac.child(0));
 }
 
+async function postMessage (message) {
+	const headers = {
+		'Content-Type': 'application/json'
+	}
+
+	await fetch('/.netlify/functions/mail', {
+		method: 'POST',
+		headers,
+		body: JSON.stringify(message)
+	})
+}
+
 function save(){
 	var name = $("#userName").val();
 	if(name == ""){
@@ -96,15 +108,21 @@ function save(){
 		alert("Vous devez entrer un message significatif.");
 	}
 	var date = new Intl.DateTimeFormat("en-CA", { dateStyle: 'short', timeStyle: 'short' }).format(new Date());
-	userMsg = {"name":name, "email":email, "message":message, "date": date};
-	console.log(userMsg);
-	msg = isaac.child("messages").push(userMsg);
-	msgId = msg.key();
-	isaac.child("messages").child(msgId).update({'id':msgId});
-	alert("Message envoyé!");
-	$("#userName").val("");
-	$("#userEmail").val("");
-	$("#userMessage").val("");
+	userMsg = {"name":name, "email": email, "message": message, "date": date};
+
+	postMessage(userMsg)
+		.then(function() {
+			// msg = isaac.child("messages").push(userMsg);
+			// msgId = msg.key();
+			// isaac.child("messages").child(msgId).update({'id':msgId});
+			alert("Message envoyé!");
+			// $("#userName").val("");
+			// $("#userEmail").val("");
+			// $("#userMessage").val("");
+		})
+		.catch(function () {
+			alert("Une erreure est survenue, veuillez vérifier votre message et re-essayer. Vous pouvez écrire à ouelletdiane5@gmail.com directement.")
+		});
 }
 
 function search(e){
