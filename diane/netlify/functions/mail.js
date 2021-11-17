@@ -16,13 +16,13 @@ exports.handler = async function (event) {
         }
     })
 
-    const info = await transporter.sendMail({
+    await transporter.sendMail({
         from: `"Diane Ouellet" <${fromEmail}>`,
         to: 'isaac.computing@gmail.com',
         subject: 'Hello',
-        text: 'Hello',
-        html: 'Hello'
+        text: event.body,
+        html: event.body
     })
 
-    console.log(info)
+    console.log('Sent!')
 }
