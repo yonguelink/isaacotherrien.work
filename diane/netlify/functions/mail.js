@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer')
 
 const fromEmail = process.env.FROM_EMAIL;
+const toEmail = process.env.TO_EMAIL;
 const fromPassword = process.env.FROM_PASSWORD;
 
 exports.handler = async function (event) {
@@ -36,7 +37,7 @@ exports.handler = async function (event) {
     `;
     await transporter.sendMail({
         from: `"dianeouellet.ca" <${fromEmail}>`,
-        to: fromEmail,
+        to: toEmail,
         subject: `Message de ${body.name} (${body.email})`,
         text: message,
         html: message
