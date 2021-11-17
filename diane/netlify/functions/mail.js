@@ -26,7 +26,9 @@ exports.handler = async function (event) {
         }
     })
 
-    const message = `Message de: ${body.name}, avec le courriel: ${body.email}\n\n${body.message}, en date du: ${body.date}`;
+    const message = `Message de: ${body.name}, avec le courriel: ${body.email}, en date du: ${body.date}
+
+    ${body.message}`;
     await transporter.sendMail({
         from: `"dianeouellet.ca" <${fromEmail}>`,
         to: fromEmail,
