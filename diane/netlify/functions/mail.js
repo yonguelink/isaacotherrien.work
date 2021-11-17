@@ -1,6 +1,5 @@
 const nodemailer = require('nodemailer')
 
-// TODO: Env Var
 const fromEmail = process.env.FROM_EMAIL;
 const fromPassword = process.env.FROM_PASSWORD;
 
@@ -9,12 +8,12 @@ exports.handler = async function (event) {
     const body = JSON.parse(event.body);
 
     if (body.email == null || body.email.length < 2) {
-        console.error(`An email can't have 3 chars. Received: '${body.email}'`)
+        console.error(`An email can't have less than 3 chars. Received: '${body.email}'`)
         return;
     }
 
-    if (body.message == null || body.message.length < 5) {
-        console.error(`A message must have more than 5 chars. Received: '${body.message}'`)
+    if (body.message == null || body.message.length < 2) {
+        console.error(`A message must have more than 2 chars. Received: '${body.message}'`)
     }
 
     const transporter = nodemailer.createTransport({
