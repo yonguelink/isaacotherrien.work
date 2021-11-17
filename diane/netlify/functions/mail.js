@@ -32,7 +32,7 @@ exports.handler = async function (event) {
         en date du: ${body.date}
         <br />
         <br />
-        ${body.message}
+        ${body.message.replace(/\n/g, '<br />')}
     `;
     await transporter.sendMail({
         from: `"dianeouellet.ca" <${fromEmail}>`,
