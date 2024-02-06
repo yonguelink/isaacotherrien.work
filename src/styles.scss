@@ -8,3 +8,7 @@
 .light-theme {
   @include light.theme();
 }
+
+body {
+  margin: 0;
+}

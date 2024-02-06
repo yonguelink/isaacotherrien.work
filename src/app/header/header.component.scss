@@ -1,0 +1,26 @@
+.header {
+    width: 100%;
+    height: 200px;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: space-between;
+    
+    .avatar {
+        width: 40%;
+        align-self: center;
+        background-position: center;
+        width: 75%;
+        height: 75%;
+        max-width: 150px;
+        border-radius: 50%;
+        margin-left: 10%;
+    }
+
+    .me {
+        align-self: center;
+    }
+
+    .theme-toggle{
+        margin-right: 0.2%;
+    }
+}

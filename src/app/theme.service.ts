@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 
+const darkThemeName = 'dark';
+const lightThemeName = 'light';
+
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
   private darkMode = true;
-  private lightThemeClass = 'light-theme';
+  private readonly lightThemeClass = 'light-theme';
 
   isDarkMode() {
     return this.darkMode;
@@ -18,6 +21,14 @@ export class ThemeService {
       document.body.classList.add(this.lightThemeClass);
     } else {
       document.body.classList.remove(this.lightThemeClass);
+    }
+  }
+
+  getThemeName(isDarkMode: boolean = this.darkMode) {
+    if (isDarkMode) {
+      return darkThemeName;
+    } else {
+      return lightThemeName;
     }
   }
 }

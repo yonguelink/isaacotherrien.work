@@ -1,23 +1,13 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ThemeService } from '../theme.service';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   standalone: true,
-  imports: [MatSlideToggleModule, FormsModule],
+  imports: [HeaderComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.less',
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  isDarkMode: boolean;
-
-  constructor(private themeService: ThemeService) {
-    this.isDarkMode = this.themeService.isDarkMode();
-  }
-
-  changeTheme() {
-    this.themeService.setTheme(this.isDarkMode);
-  }
+  
 }
