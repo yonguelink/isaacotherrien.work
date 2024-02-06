@@ -1,15 +1,10 @@
 import { Component } from '@angular/core';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    MatSlideToggleModule
-  ],
+  imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.less'
+  styleUrl: './home.component.less',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}
