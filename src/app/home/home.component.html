@@ -1,5 +1,8 @@
 <div id="page">
   <header>
+    <mat-slide-toggle [(ngModel)]="isDarkMode" (change)="changeTheme()">
+      Are we in dark mode {{ isDarkMode }}
+    </mat-slide-toggle>
     background avatar Translate: I am Isaac Ouellet Therrien, a Full Stack
     Developper at work
   </header>

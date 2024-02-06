@@ -1,0 +1,10 @@
+@use "@angular/material" as mat;
+@use "dark.scss" as dark;
+@use "light.scss" as light;
+
+@include mat.core();
+@include dark.theme();
+
+.light-theme {
+  @include light.theme();
+}
