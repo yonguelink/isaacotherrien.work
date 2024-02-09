@@ -34,7 +34,13 @@
             "inlineStyleLanguage": "sass",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
-            "scripts": []
+            "scripts": [
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-csharp.min.js",
+              "node_modules/prismjs/components/prism-css.min.js",
+              "node_modules/prismjs/components/prism-javascript.min.js",
+              "node_modules/emoji-toolkit/lib/js/joypixels.min.js"
+            ]
           },
           "configurations": {
             "production": {
