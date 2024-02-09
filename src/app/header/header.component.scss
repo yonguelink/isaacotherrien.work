@@ -1,7 +1,5 @@
 .header {
-  backdrop-filter: blur(8px) brightness(1.2);
-  mask-image: linear-gradient(black 90%, transparent);
-  width: 100%;
+  mask-image: linear-gradient(black 80%, transparent);
   height: 100px;
   background-size: 100% 100%;
   display: flex;
@@ -16,7 +14,6 @@
   }
 
   .right {
-    flex-grow: 1;
     justify-self: right;
     margin-right: 5%;
   }
@@ -38,8 +35,8 @@
   }
 
   .theme-toggle {
-    position: absolute;
-    right: 0.2%;
-    top: 0.5%;
+    position: fixed;
+    right: 0;
+    top: 0;
   }
 }
