@@ -3,25 +3,22 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ThemeToggle } from '../theme-toggle/theme-toggle';
 import { ThemeService } from '../theme.service';
+import { MenuComponent } from '../menu/menu.component';
 
 const email = 'isaac.computing@gmail.com';
 
 @Component({
   selector: 'header',
   standalone: true,
-  imports: [ThemeToggle, FormsModule, CommonModule],
+  imports: [ThemeToggle, FormsModule, CommonModule, MenuComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   avatarUrl: Promise<string>;
 
-  constructor(private themeService: ThemeService) {
-    this.avatarUrl = getGravatar(email, 125);
-  }
-
-  getThemeName(): string {
-    return this.themeService.getThemeName();
+  constructor() {
+    this.avatarUrl = getGravatar(email, 80);
   }
 }
 

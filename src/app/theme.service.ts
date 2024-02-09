@@ -7,7 +7,7 @@ const lightThemeName = 'light';
   providedIn: 'root',
 })
 export class ThemeService {
-  private darkMode = true;
+  private darkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   private readonly lightThemeClass = 'light-theme';
 
   isDarkMode() {

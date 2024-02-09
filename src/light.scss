@@ -1,18 +1,15 @@
 @use "@angular/material" as mat;
+@use "app/header/header-theme.component" as header;
 
 @mixin theme() {
   $primary: mat.define-palette(mat.$grey-palette, 900, 700, 900, 50);
   $accent: mat.define-palette(mat.$pink-palette, A400, 500, 800, 400);
-
-  // The "warn" palette is optional and defaults to red if not specified.
-  $warn: mat.define-palette(mat.$red-palette);
 
   $theme: mat.define-light-theme(
     (
       color: (
         primary: $primary,
         accent: $accent,
-        warn: $warn,
       ),
       typography: mat.define-typography-config(),
       density: 0,
@@ -20,4 +17,5 @@
   );
 
   @include mat.all-component-colors($theme);
+  @include header.background($theme);
 }

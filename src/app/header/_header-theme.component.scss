@@ -1,0 +1,11 @@
+@use "sass:map";
+
+@mixin background($theme) {
+  .header {
+    @if map.get($theme, "is-dark") {
+      background-image: url("../../assets/dark.jpg");
+    } @else {
+      background-image: url("../../assets/light.jpg");
+    }
+  }
+}

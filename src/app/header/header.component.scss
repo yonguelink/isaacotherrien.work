@@ -1,24 +1,40 @@
 .header {
+  backdrop-filter: blur(8px) brightness(1.2);
+  mask-image: linear-gradient(black 90%, transparent);
   width: 100%;
-  height: 200px;
+  height: 100px;
   background-size: 100% 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 5vw;
+
+  .left {
+    display: flex;
+    margin-left: 5%;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .right {
+    flex-grow: 1;
+    justify-self: right;
+    margin-right: 5%;
+  }
 
   .avatar {
-    $avatar-size: 125px;
+    $avatar-size: 80px;
     background-position: center;
     background-repeat: no-repeat;
     width: $avatar-size;
-    min-width: 75px;
-    max-width: 150px;
     height: $avatar-size;
-    min-height: 75px;
-    max-height: 150px;
     border-radius: 50%;
-    margin-left: 10%;
+  }
+
+  .me {
+    margin-left: 3%;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
   }
 
   .theme-toggle {
