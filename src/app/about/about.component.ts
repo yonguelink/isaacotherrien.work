@@ -6,8 +6,6 @@ import { MarkdownComponent } from 'ngx-markdown';
   standalone: true,
   imports: [MarkdownComponent],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.sass'
+  styleUrl: './about.component.sass',
 })
-export class AboutComponent {
-
-}
+export class AboutComponent {}

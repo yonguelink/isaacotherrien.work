@@ -1,11 +1,45 @@
-<li id="projects">
-  Projects
-  <ul>
-    <li>This</li>
-    <li>Taxprep</li>
-    <li>SuperMetaBoard</li>
-    <li>VikingFS</li>
-    <li>Aster</li>
-    <li>Github repos that I created that are public?</li>
-  </ul>
-</li>
+<div id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    @for (project of projects; track project.name) {
+      <div class="flip-container">
+        <div class="flip-card">
+          <mat-card class="card">
+            <mat-card-header class="head">
+              <mat-card-title>{{ project.name }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              {{ project.description }}
+            </mat-card-content>
+            <mat-card-actions align="end">
+              <button
+                mat-icon-button
+                color="accent"
+                (click)="openLink(project.link)"
+              >
+                <mat-icon>open_in_new</mat-icon>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="flip-back">
+            <mat-card-content class="back-content">
+              @if (project.image) {
+                <a href="{{ project.link }}" target="_blank">
+                  <img src="{{ project.image }}" />
+                </a>
+              } @else {
+                <button
+                  mat-icon-button
+                  color="accent"
+                  (click)="openLink(project.link)"
+                >
+                  <mat-icon>open_in_new</mat-icon>
+                </button>
+              }
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -8,7 +8,13 @@ import { ContactComponent } from '../contact/contact.component';
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [HeaderComponent, AboutComponent, ProjectsComponent, ContactComponent, FooterComponent],
+  imports: [
+    HeaderComponent,
+    AboutComponent,
+    ProjectsComponent,
+    ContactComponent,
+    FooterComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

@@ -7,7 +7,9 @@ const lightThemeName = 'light';
   providedIn: 'root',
 })
 export class ThemeService {
-  private darkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  private darkMode =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
   private readonly lightThemeClass = 'light-theme';
 
   constructor() {
@@ -36,7 +38,7 @@ export class ThemeService {
   private setMarkdownStyle() {
     const markdownThemeId = 'markdown-theme-id';
     this.removeOldLink(markdownThemeId);
-    const codeStyleUrl = this.isDarkMode() 
+    const codeStyleUrl = this.isDarkMode()
       ? 'https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vsc-dark-plus.min.css'
       : 'https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-vs.min.css';
     this.createLinkElement(codeStyleUrl, markdownThemeId);

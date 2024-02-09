@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.sass'
+  styleUrl: './contact.component.sass',
 })
-export class ContactComponent {
-
-}
+export class ContactComponent {}
