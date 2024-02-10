@@ -42,7 +42,7 @@ export class ContactComponent {
       return;
     }
     window.open(
-      `mailto:isaac@isaacotherrien.work?subject=${this.form.controls.subject.value}&body=From: ${this.form.controls.name.value}\n${this.form.controls.message.value}`,
+      `mailto:isaac@isaacotherrien.work?subject=${this.form.controls.subject.value}&body=From: ${this.form.controls.name.value}%0D%0A${this.form.controls.message.value}`,
     );
   }
 
