@@ -2,7 +2,7 @@
 
 .header {
   mask-image: linear-gradient(black 90%, transparent);
-  height: 100px;
+  height: 110px;
   background-size: 100% 100%;
   display: flex;
   justify-content: space-between;
@@ -30,7 +30,7 @@
   }
 
   .me {
-    margin-left: 3%;
+    margin-left: 1%;
     @media screen and (max-width: 600px) {
       display: none;
     }
@@ -39,6 +39,23 @@
 
     .accent {
       font-weight: bold;
+    }
+
+    .occupations {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        &:not(:last-child):after {
+          content: "/";
+        }
+
+        &.accent {
+          font-weight: normal;
+        }
+      }
     }
   }
 

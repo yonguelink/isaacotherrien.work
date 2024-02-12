@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { last } from 'rxjs';
 
 const darkThemeName = 'dark';
 const lightThemeName = 'light';
@@ -7,13 +8,25 @@ const lightThemeName = 'light';
   providedIn: 'root',
 })
 export class ThemeService {
-  private darkMode =
-    window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches;
+  private darkMode: boolean;
   private readonly lightThemeClass = 'light-theme';
 
   constructor() {
-    this.setMarkdownStyle();
+    this.darkMode = this.defaultIsDarkMode();
+    this.setTheme(this.darkMode);
+  }
+
+  private defaultIsDarkMode(): boolean {
+    const lastSetValue = localStorage.getItem('isDarkMode');
+
+    if (lastSetValue !== null) {
+      return lastSetValue === 'true';
+    }
+
+    return (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    );
   }
 
   isDarkMode() {
@@ -22,8 +35,14 @@ export class ThemeService {
 
   setTheme(isDarkMode: boolean) {
     this.darkMode = isDarkMode;
+    localStorage.setItem('isDarkMode', `${isDarkMode}`);
 
-    document.body.classList.toggle(this.lightThemeClass);
+    if (isDarkMode) {
+      document.body.classList.remove(this.lightThemeClass);
+    } else {
+      document.body.classList.add(this.lightThemeClass);
+    }
+
     this.setMarkdownStyle();
   }
 
