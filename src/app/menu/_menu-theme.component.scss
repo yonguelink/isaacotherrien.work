@@ -1,0 +1,50 @@
+@use "@angular/material" as mat;
+
+@mixin setLinesColor($color) {
+  background-color: $color;
+  &:before,
+  &:after {
+    background-color: $color;
+  }
+}
+
+@mixin linkColors($theme) {
+  $accent: mat.get-theme-color($theme, accent);
+  $text: mat.get-theme-color($theme, primary, text);
+  .menu {
+    a {
+      color: $text;
+      &:hover,
+      &:focus {
+        color: $accent;
+      }
+    }
+  }
+
+  .menu-icon {
+    .menu-line {
+      @include setLinesColor($text);
+    }
+
+    &:hover,
+    &:active {
+      .menu-line {
+        @include setLinesColor($accent);
+      }
+    }
+  }
+
+  .side-menu {
+    &:checked {
+      & ~ .menu-icon {
+        .menu-line {
+          @include setLinesColor($accent);
+        }
+      }
+
+      & ~ .menu .list {
+        background-color: mat.get-theme-color($theme, primary, darker);
+      }
+    }
+  }
+}

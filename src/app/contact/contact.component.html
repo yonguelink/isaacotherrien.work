@@ -4,14 +4,14 @@
   <form (submit)="sendEmail()" [formGroup]="form">
     <div class="whom">
       <mat-form-field>
-        <mat-label>Send me an email to reach out about anything!</mat-label>
+        <mat-label>Name</mat-label>
         <input matInput formControlName="name" required />
         @if (form.controls.name.invalid) {
           <mat-error>{{ getErrorMessage(form.controls.name) }}</mat-error>
         }
       </mat-form-field>
       <mat-form-field>
-        <mat-label>A very important topic</mat-label>
+        <mat-label>Topic</mat-label>
         <input matInput formControlName="subject" required />
         @if (form.controls.subject.invalid) {
           <mat-error>{{ getErrorMessage(form.controls.subject) }}</mat-error>
@@ -20,7 +20,7 @@
     </div>
 
     <mat-form-field>
-      <mat-label>The very important topic</mat-label>
+      <mat-label>The topic</mat-label>
       <textarea matInput formControlName="message"></textarea>
       @if (form.controls.message.invalid) {
         <mat-error>{{ getErrorMessage(form.controls.message) }}</mat-error>
