@@ -21,7 +21,7 @@ export class ProjectsService {
       image: new URL(
         'https://isaacotherrien.work/images/fulls/isaacotherrien.png',
       ),
-      name: 'Taxprep dashboard (now apparently CCH iFirm® Tracking)',
+      name: 'Taxprep dashboard / CCH iFirm® Tracking',
     },
     {
       description: 'SuperMetaBoard',

@@ -1,4 +1,7 @@
+@use "../../font" as font;
+
 .menu {
+  @include font.setFontFamily();
   display: flex;
   justify-content: right;
 

@@ -1,5 +1,7 @@
+@use "../../font" as font;
+
 .header {
-  mask-image: linear-gradient(black 80%, transparent);
+  mask-image: linear-gradient(black 90%, transparent);
   height: 100px;
   background-size: 100% 100%;
   display: flex;
@@ -31,6 +33,12 @@
     margin-left: 3%;
     @media screen and (max-width: 600px) {
       display: none;
+    }
+
+    @include font.setFontFamily();
+
+    .accent {
+      font-weight: bold;
     }
   }
 

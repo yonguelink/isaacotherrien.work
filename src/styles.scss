@@ -1,14 +1,21 @@
 @use "@angular/material" as mat;
 @use "dark.scss" as dark;
 @use "light.scss" as light;
+@use "font.scss" as font;
 
 @include mat.core();
-@include dark.theme();
+@include font.defineFontFace();
+$typography: font.getTypography();
+@include dark.theme($typography);
 
 .light-theme {
-  @include light.theme();
+  @include light.theme($typography);
 }
 
 body {
   margin: 0;
+
+  h2 {
+    @include font.setFontFamily();
+  }
 }

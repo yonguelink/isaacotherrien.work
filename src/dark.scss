@@ -2,7 +2,7 @@
 @use "app/header/header-theme.component" as header;
 @use "app/footer/footer-theme.component" as footer;
 
-@mixin theme() {
+@mixin theme($typography) {
   $primary: mat.define-palette(mat.$grey-palette, 900, 700, 900, 50);
   $accent: mat.define-palette(mat.$pink-palette, A400, 500, 800, 400);
 
@@ -12,7 +12,7 @@
         primary: $primary,
         accent: $accent,
       ),
-      typography: mat.define-typography-config(),
+      typography: $typography,
       density: 0,
     )
   );
