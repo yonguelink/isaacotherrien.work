@@ -4,6 +4,7 @@ import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { FooterComponent } from '../footer/footer.component';
 import { ContactComponent } from '../contact/contact.component';
+import { StartOfPageComponent } from '../start-of-page/start-of-page.component';
 
 @Component({
   selector: 'home',
@@ -14,6 +15,7 @@ import { ContactComponent } from '../contact/contact.component';
     ProjectsComponent,
     ContactComponent,
     FooterComponent,
+    StartOfPageComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
