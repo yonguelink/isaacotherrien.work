@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './start-of-page.component.sass',
 })
 export class StartOfPageComponent {
-  display: string = 'none';
+  visible: boolean = false;
 
   scrollToTop() {
     window.scroll({
@@ -22,10 +22,6 @@ export class StartOfPageComponent {
 
   @HostListener('document:scroll', ['$event'])
   onScroll() {
-    if (window.scrollY > 500) {
-      this.display = 'block';
-    } else {
-      this.display = 'none';
-    }
+    this.visible = window.scrollY > 500;
   }
 }
