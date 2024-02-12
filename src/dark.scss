@@ -1,5 +1,6 @@
 @use "@angular/material" as mat;
 @use "app/header/header-theme.component" as header;
+@use "app/footer/footer-theme.component" as footer;
 
 @mixin theme() {
   $primary: mat.define-palette(mat.$grey-palette, 900, 700, 900, 50);
@@ -18,4 +19,5 @@
 
   @include mat.all-component-themes($theme);
   @include header.background($theme);
+  @include footer.background($theme);
 }

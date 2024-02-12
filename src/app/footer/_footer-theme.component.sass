@@ -1,0 +1,5 @@
+@use '@angular/material' as mat
+
+@mixin background($theme)
+    .footer
+        background-color: mat.get-theme-color($theme, primary, darker)

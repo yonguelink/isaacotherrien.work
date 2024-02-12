@@ -1,10 +1,29 @@
 import { Component } from '@angular/core';
+import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'footer',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+  styleUrl: './footer.component.sass',
 })
-export class FooterComponent {}
+export class FooterComponent {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    this.registerIcon('github', iconRegistry, sanitizer);
+    this.registerIcon('linkedin', iconRegistry, sanitizer);
+    this.registerIcon('source', iconRegistry, sanitizer);
+  }
+
+  private registerIcon(
+    name: string,
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer,
+  ) {
+    iconRegistry.addSvgIcon(
+      name,
+      sanitizer.bypassSecurityTrustResourceUrl(`assets/${name}.svg`),
+    );
+  }
+}
