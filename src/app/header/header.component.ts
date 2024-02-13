@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ThemeToggle } from '../theme-toggle/theme-toggle';
-import { ThemeService } from '../theme.service';
 import { MenuComponent } from '../menu/menu.component';
 
 const email = 'isaac.computing@gmail.com';
