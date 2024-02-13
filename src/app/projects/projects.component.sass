@@ -1,0 +1,60 @@
+.projects
+    max-width: 80vw
+    display: grid
+    grid-gap: 10px
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+
+    .flip-container,
+    .flip-card,
+    .card,
+    .flip-back
+        height: 300px
+
+    .flip-container
+        text-align: left
+        overflow-wrap: anywhere
+        position: relative
+
+        .head
+            height: 60px
+            overflow: hidden
+
+        img
+            width: 100%
+            height: 60px
+
+        &:hover .flip-card
+            transform: rotateY(180deg)
+
+        .flip-card
+            position: relative
+            transform-style: preserve-3d
+            transition: transform .7s ease-in-out
+
+        .flip-back
+            z-index: 1
+            transform: rotateY(180deg)
+            backface-visibility: hidden
+            position: absolute
+            width: 100%
+
+            .back-content
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 0
+                width: 100%
+                height: 100%
+                a, img
+                    height: 100%
+
+        .card
+            z-index: 2
+            position: absolute
+            transform: rotateY(0deg)
+            backface-visibility: hidden
+            padding: 1%
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            width: 100%

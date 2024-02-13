@@ -1,0 +1,22 @@
+#contact form
+    display: flex
+    flex-direction: column
+    align-items: stretch
+
+    input
+        font-family: initial !important
+
+    .whom
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+
+        @media screen and (min-width: 800px)
+            gap: 5%
+            flex-direction: row
+
+        & > *
+            flex-grow: 1
+
+    .spinner
+        align-self: center

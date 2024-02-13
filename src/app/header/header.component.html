@@ -1,0 +1,20 @@
+<div class="header">
+  <div class="left">
+    <div
+      class="avatar"
+      [style.background-image]="'url(\'' + (avatarUrl | async) + '\')'"
+    ></div>
+
+    <div class="me">
+      <div class="name"><span class="accent">Isaac</span> Ouellet-Therrien</div>
+      <ul class="occupations">
+        <li i18n>Remote FullStack Developper</li>
+        <li class="accent">Geek</li>
+      </ul>
+    </div>
+  </div>
+
+  <menu class="right"></menu>
+
+  <theme-toggle class="theme-toggle"></theme-toggle>
+</div>

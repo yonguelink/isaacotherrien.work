@@ -1,0 +1,88 @@
+@use "../../font" as font;
+
+.menu-container {
+  .menu {
+    @include font.setFontFamily();
+    width: 100vw;
+    height: 110px;
+    display: none;
+    position: fixed;
+
+    .list {
+      list-style-type: none;
+      padding: 0;
+
+      a {
+        text-decoration: none;
+        display: block;
+        padding: 30px;
+      }
+    }
+
+    @media screen and (min-width: 450px) {
+      display: flex;
+      justify-content: right;
+      width: fit-content;
+      height: fit-content;
+      position: initial;
+
+      .list {
+        display: flex;
+        a {
+          padding: 0;
+        }
+        li {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  .menu-icon {
+    width: 24px;
+    height: 100%;
+    .menu-line {
+      display: block;
+      height: 2px;
+      position: relative;
+      width: 24px;
+
+      &::before,
+      &::after {
+        content: " ";
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+      &::before {
+        top: 5px;
+      }
+      &::after {
+        top: -5px;
+      }
+    }
+
+    @media screen and (min-width: 450px) {
+      display: none;
+    }
+  }
+
+  .side-menu {
+    display: none;
+    &:checked {
+      & ~ .menu {
+        display: block;
+        .list {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+        }
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

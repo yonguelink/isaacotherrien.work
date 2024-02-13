@@ -1,0 +1,30 @@
+{
+  "locale": "fr",
+  "translations": {
+    "641716500460785755": "Entrer en contact",
+    "417944514836399466": "Envoyez-moi un courriel à propos de n'importe quoi!",
+    "8953033926734869941": "Nom",
+    "4768749765465246664": "Courriel",
+    "9127604588498960753": "Sujet",
+    "8066608938393600549": "Message",
+    "4943998242904350511": " Envoyer ",
+    "5707894092693763271": "Message reçu!",
+    "7196360912393502967": "Vous devez entrer une valeur",
+    "4806719983190482715": "Au moins {$PH} caractères requis",
+    "7408541314475571768": "Pas un courriel valide",
+    "4987318390382742917": "Développeur FullStack à distance",
+    "7156797854368699223": "Moi",
+    "7091571651222742304": "Projets",
+    "7922989125096435449": "Contact",
+    "3000329291812397524": "mon site personnel... J'espère le faire évoluer pour devenir une sorte de référence à un moment donné pour moi (et peut-être pour d'autres)",
+    "8822843669965819306": "isaacotherrien.work (ceci)",
+    "506521926281554782": "Taxprep dashboard (maintenant apparement CCH iFirm® Suivi)",
+    "8709031077878086116": "Taxprep dashboard / CCH iFirm® Suivi",
+    "3042856834682752981": "SuperMetaBoard",
+    "3654561464200617620": "VikingFS",
+    "2297607058271523798": "Le site web d'Aster",
+    "6376252983260646935": "public repos, TODO aller chercher sur github",
+    "8262108640078645269": "sombre",
+    "2770166870006762730": "lumineux"
+  }
+}

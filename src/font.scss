@@ -1,0 +1,27 @@
+@use "@angular/material" as mat;
+
+$fonts:
+  "ExtraBold" "bold" "normal",
+  "ExtraBoldItalic" "bold" "itatlic",
+  "Italic" "normal" "itatlic",
+  "Regular" "normal" "normal";
+$fontFamily: "Monaspace Krypton";
+
+@mixin defineFontFace() {
+  @each $name, $weight, $style in $fonts {
+    @font-face {
+      font-family: $fontFamily;
+      src: url("fonts/MonaspaceKrypton-#{$name}.otf");
+      font-weight: $weight;
+      font-style: $style;
+    }
+  }
+}
+
+@mixin setFontFamily() {
+  font-family: $fontFamily;
+}
+
+@function getTypography() {
+  @return mat.define-typography-config($font-family: $fontFamily);
+}

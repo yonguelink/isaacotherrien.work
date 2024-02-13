@@ -1,0 +1,13 @@
+.go-to-start
+    position: fixed
+    bottom: 10px
+    right: 10px
+    visibility: hidden
+    opacity: 0
+    $delay: 0.1s
+    transition: opacity $delay linear, visibility 0s $delay
+
+    &.visible
+        visibility: visible
+        opacity: 1
+        transition: visibility 0s, opacity $delay linear

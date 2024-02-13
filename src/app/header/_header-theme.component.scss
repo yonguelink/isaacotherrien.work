@@ -1,0 +1,18 @@
+@use "@angular/material" as mat;
+
+@mixin background($theme) {
+  .header {
+    background-color: mat.get-theme-color($theme, primary, darker);
+
+    .me {
+      .accent {
+        color: mat.get-theme-color($theme, accent);
+
+        &:after {
+          color: mat.get-theme-color($theme, primary, text);
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}

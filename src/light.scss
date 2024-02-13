@@ -1,0 +1,21 @@
+@use "@angular/material" as mat;
+@use "theme-components" as components;
+
+@mixin theme($typography) {
+  $primary: mat.define-palette(mat.$grey-palette, 700, 500, 700, 50);
+  $accent: mat.define-palette(mat.$pink-palette, A400, 500, 800, 400);
+
+  $theme: mat.define-light-theme(
+    (
+      color: (
+        primary: $primary,
+        accent: $accent,
+      ),
+      typography: $typography,
+      density: 0,
+    )
+  );
+
+  @include mat.all-component-colors($theme);
+  @include components.colors($theme);
+}

@@ -1,0 +1,67 @@
+@use "../../font" as font;
+
+.header {
+  mask-image: linear-gradient(black 90%, transparent);
+  height: 110px;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left {
+    display: flex;
+    margin-left: 5%;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .right {
+    justify-self: right;
+    margin-right: 5%;
+  }
+
+  .avatar {
+    $avatar-size: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 50%;
+  }
+
+  .me {
+    margin-left: 1%;
+    @media screen and (max-width: 660px) {
+      display: none;
+    }
+
+    @include font.setFontFamily();
+
+    .accent {
+      font-weight: bold;
+    }
+
+    .occupations {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        &:not(:last-child):after {
+          content: "/";
+        }
+
+        &.accent {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  .theme-toggle {
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+}

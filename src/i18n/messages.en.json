@@ -1,0 +1,30 @@
+{
+  "locale": "en",
+  "translations": {
+    "641716500460785755": "Get in Touch",
+    "417944514836399466": "Send me an email to reach out about anything!",
+    "8953033926734869941": "Name",
+    "4768749765465246664": "Email",
+    "9127604588498960753": "Subject",
+    "8066608938393600549": "Message",
+    "4943998242904350511": " Submit ",
+    "5707894092693763271": "Message Received!",
+    "7196360912393502967": "You must enter a value",
+    "4806719983190482715": "At least {$PH} characters required",
+    "7408541314475571768": "Not a valid email",
+    "4987318390382742917": "Remote FullStack Developper",
+    "7156797854368699223": "Me",
+    "7091571651222742304": "Projects",
+    "7922989125096435449": "Contact",
+    "3000329291812397524": "my personal website... I hope to make this evolve to be some kind of reference at some point for me (and possibly others)",
+    "8822843669965819306": "isaacotherrien.work (this)",
+    "506521926281554782": "Taxprep dashboard (now apparently CCH iFirm® Tracking)",
+    "8709031077878086116": "Taxprep dashboard / CCH iFirm® Tracking",
+    "3042856834682752981": "SuperMetaBoard",
+    "3654561464200617620": "VikingFS",
+    "2297607058271523798": "Aster's website",
+    "6376252983260646935": "public repos, TODO fetch from github",
+    "8262108640078645269": "dark",
+    "2770166870006762730": "light"
+  }
+}
