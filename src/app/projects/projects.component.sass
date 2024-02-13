@@ -1,17 +1,16 @@
 .projects
-    display: flex
-    flex-wrap: wrap
+    max-width: 80vw
+    display: grid
+    grid-gap: 10px
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
 
     .flip-container,
     .flip-card,
     .card,
     .flip-back
-        width: 400px
-        max-width: 80vw
         height: 300px
 
     .flip-container
-        margin: 1%
         text-align: left
         overflow-wrap: anywhere
         position: relative
@@ -37,6 +36,7 @@
             transform: rotateY(180deg)
             backface-visibility: hidden
             position: absolute
+            width: 100%
 
             .back-content
                 display: flex
@@ -57,4 +57,4 @@
             display: flex
             flex-direction: column
             justify-content: space-between
-            flex-grow: 0
+            width: 100%
