@@ -1,0 +1,27 @@
+[build]
+command = "npm run build"
+
+[context]
+
+  [context.production]
+  command = "npm run build"
+
+    [context.production.build]
+    command = "npm run build"
+
+  [context.main]
+  command = "npm run build"
+
+    [context.main.build]
+    command = "npm run build"
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  conditions = { Language = ["fr"] }
