@@ -1,13 +1,24 @@
 <div id="contact">
   <h2>Get in Touch</h2>
   <p>Send me an email to reach out about anything!</p>
-  <form (submit)="sendEmail()" [formGroup]="form">
+  <form
+    (submit)="sendEmail(formDirective)"
+    [formGroup]="form"
+    #formDirective="ngForm"
+  >
     <div class="whom">
       <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput formControlName="name" required />
         @if (form.controls.name.invalid) {
           <mat-error>{{ getErrorMessage(form.controls.name) }}</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required />
+        @if (form.controls.email.invalid) {
+          <mat-error>{{ getErrorMessage(form.controls.email) }}</mat-error>
         }
       </mat-form-field>
       <mat-form-field>
@@ -26,6 +37,10 @@
         <mat-error>{{ getErrorMessage(form.controls.message) }}</mat-error>
       }
     </mat-form-field>
-    <button mat-raised-button color="accent" type="submit">Submit</button>
+    @if (sending) {
+      <mat-spinner color="accent" class="spinner" diameter="36"></mat-spinner>
+    } @else {
+      <button mat-raised-button color="accent" type="submit">Submit</button>
+    }
   </form>
 </div>

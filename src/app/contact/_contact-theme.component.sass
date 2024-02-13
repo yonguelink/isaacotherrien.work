@@ -1,0 +1,10 @@
+
+@use "@angular/material" as mat
+
+@mixin snack($theme)
+    .mat-mdc-snack-bar-container
+        &.snack
+            $accent: mat.get-theme-color($theme, accent)
+            --mdc-snackbar-container-color: #{mat.get-theme-color($theme, primary)}
+            --mdc-snackbar-supporting-text-color: #{$accent}
+            --mat-snack-bar-button-color: #{$accent}
