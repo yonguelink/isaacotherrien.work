@@ -22,7 +22,7 @@
         }
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Topic</mat-label>
+        <mat-label>Subject</mat-label>
         <input matInput formControlName="subject" required />
         @if (form.controls.subject.invalid) {
           <mat-error>{{ getErrorMessage(form.controls.subject) }}</mat-error>
@@ -31,7 +31,7 @@
     </div>
 
     <mat-form-field>
-      <mat-label>The topic</mat-label>
+      <mat-label>Message</mat-label>
       <textarea matInput formControlName="message"></textarea>
       @if (form.controls.message.invalid) {
         <mat-error>{{ getErrorMessage(form.controls.message) }}</mat-error>
