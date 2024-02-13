@@ -13,10 +13,12 @@ import { ProjectsService } from '../projects.service';
   styleUrl: './projects.component.sass',
 })
 export class ProjectsComponent {
-  projects: Project[];
+  projects: Project[] = [];
 
   constructor(projectsService: ProjectsService) {
-    this.projects = projectsService.getProjects();
+    projectsService
+      .getProjects()
+      .subscribe((projects) => (this.projects = projects));
   }
 
   openLink(link: URL) {
