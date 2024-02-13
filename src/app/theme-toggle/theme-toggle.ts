@@ -42,8 +42,4 @@ export class ThemeToggle implements AfterViewInit {
   changeTheme() {
     this.themeService.setTheme(this.isDarkMode);
   }
-
-  getOppositeTheme() {
-    return $localize`Switch to ${this.titleCasePipe.transform(this.themeService.getThemeName(!this.isDarkMode))} theme`;
-  }
 }

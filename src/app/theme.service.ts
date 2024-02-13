@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { last } from 'rxjs';
 
-const darkThemeName = 'dark';
-const lightThemeName = 'light';
+const darkThemeName = $localize`dark`;
+const lightThemeName = $localize`light`;
 
 @Injectable({
   providedIn: 'root',

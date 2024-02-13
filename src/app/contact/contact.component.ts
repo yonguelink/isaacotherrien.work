@@ -60,7 +60,7 @@ export class ContactComponent {
       `From: ${this.form.controls.name.value} - ${this.form.controls.email.value}\n${this.form.controls.message.value}`,
     );
 
-    this.snackBar.open('Message Received!', 'OK', {
+    this.snackBar.open($localize`Message Received!`, 'OK', {
       duration: 2000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
@@ -74,13 +74,13 @@ export class ContactComponent {
 
   getErrorMessage(validator: FormControl) {
     if (validator.errors?.['required']) {
-      return 'You must enter a value';
+      return $localize`You must enter a value`;
     }
 
     if (validator.errors?.['minlength']) {
-      return `At least ${validator.errors?.['minlength'].requiredLength} characters required`;
+      return $localize`At least ${validator.errors?.['minlength'].requiredLength} characters required`;
     }
 
-    return validator.invalid ? 'Not a valid email' : '';
+    return validator.invalid ? $localize`Not a valid email` : '';
   }
 }

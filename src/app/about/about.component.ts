@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject, LOCALE_ID } from '@angular/core';
 import { MarkdownComponent } from 'ngx-markdown';
 
 @Component({
@@ -8,4 +8,10 @@ import { MarkdownComponent } from 'ngx-markdown';
   templateUrl: './about.component.html',
   styleUrl: './about.component.sass',
 })
-export class AboutComponent {}
+export class AboutComponent {
+  markdownFilePath: string;
+  constructor(@Inject(LOCALE_ID) locale: string) {
+    console.log(locale);
+    this.markdownFilePath = `assets/content/${locale}/about.md`;
+  }
+}
