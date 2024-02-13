@@ -9,7 +9,11 @@
     .whom
         display: flex
         justify-content: space-between
-        gap: 5%
+        flex-direction: column
+
+        @media screen and (min-width: 800px)
+            gap: 5%
+            flex-direction: row
 
         & > *
             flex-grow: 1

@@ -30,19 +30,16 @@ import { EmailService } from '../email.service';
 })
 export class ContactComponent {
   form = new FormGroup({
-    subject: new FormControl('asdasdsda', [
+    subject: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
     ]),
-    message: new FormControl('asdasdaasdasdsd', [
+    message: new FormControl('', [
       Validators.required,
       Validators.minLength(10),
     ]),
-    name: new FormControl('asdasd', [Validators.required]),
-    email: new FormControl('asdasd@asdasd', [
-      Validators.required,
-      Validators.email,
-    ]),
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
   });
   sending = false;
 
