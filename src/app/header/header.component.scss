@@ -31,9 +31,6 @@
 
   .me {
     margin-left: 1%;
-    @media screen and (max-width: 660px) {
-      display: none;
-    }
 
     @include font.setFontFamily();
 
@@ -42,6 +39,10 @@
     }
 
     .occupations {
+      @media screen and (max-width: 820px) {
+        display: none;
+      }
+
       list-style: none;
       padding: 0;
       margin: 0;

@@ -11,15 +11,17 @@
     .list {
       list-style-type: none;
       padding: 0;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 
       a {
         text-decoration: none;
         display: block;
-        padding: 30px;
       }
     }
 
-    @media screen and (min-width: 450px) {
+    @media screen and (min-width: 660px) {
       display: flex;
       justify-content: right;
       width: fit-content;
@@ -63,7 +65,7 @@
       }
     }
 
-    @media screen and (min-width: 450px) {
+    @media screen and (min-width: 660px) {
       display: none;
     }
   }

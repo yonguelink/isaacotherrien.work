@@ -5,7 +5,6 @@ const toEmail = process.env.TO_EMAIL;
 const fromPassword = process.env.FROM_PASSWORD;
 
 exports.handler = async function (event) {
-    console.log(`Body: ${event.body}`)
     const body = JSON.parse(event.body);
 
     if (body.email == null || body.email.length < 2) {

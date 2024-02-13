@@ -11,7 +11,6 @@ import { MarkdownComponent } from 'ngx-markdown';
 export class AboutComponent {
   markdownFilePath: string;
   constructor(@Inject(LOCALE_ID) locale: string) {
-    console.log(locale);
     this.markdownFilePath = `assets/content/${locale}/about.md`;
   }
 }
