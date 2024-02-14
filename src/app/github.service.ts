@@ -16,7 +16,8 @@ export class GithubService {
     return new HttpHeaders().set(
       'authorization',
       // token from throwawaygithubaccount
-      'Bearer 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',
+      // TODO: Make this work in dev too plz
+      `Bearer ${(<any>window).GITHUB_TOKEN}`,
     );
   }
 
