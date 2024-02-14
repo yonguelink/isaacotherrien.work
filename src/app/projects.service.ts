@@ -53,6 +53,7 @@ export class ProjectsService {
             (repository) =>
               !repository.fork &&
               !repository.disabled &&
+              repository.description !== null &&
               repository.language !== null &&
               repository.owner.login === 'yonguelink',
           )
