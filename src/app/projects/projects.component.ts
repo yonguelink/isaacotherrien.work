@@ -16,9 +16,9 @@ export class ProjectsComponent {
   projects: Project[] = [];
 
   constructor(projectsService: ProjectsService) {
-    projectsService
-      .getProjects()
-      .subscribe((projects) => (this.projects = projects));
+    projectsService.getProjects().subscribe((projects) => {
+      this.projects = projects;
+    });
   }
 
   openLink(link: URL) {

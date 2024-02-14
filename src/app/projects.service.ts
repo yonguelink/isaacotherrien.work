@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Project } from './project';
 import { GithubService } from './github.service';
-import { map } from 'rxjs';
+import { map, mergeMap, toArray } from 'rxjs';
+import { Repository } from './github/repository';
 
 @Injectable({
   providedIn: 'root',
@@ -37,9 +38,16 @@ export class ProjectsService {
   ];
   constructor(private githubService: GithubService) {}
 
+  private sortRepositories(a: Repository, b: Repository) {
+    if (a.pushed_at >= b.pushed_at) {
+      return 0;
+    }
+    return 1;
+  }
+
   getProjects() {
     return this.githubService.getRepositories().pipe(
-      map((repositories) =>
+      mergeMap((repositories) =>
         repositories
           .filter(
             (repository) =>
@@ -48,24 +56,27 @@ export class ProjectsService {
               repository.language !== null &&
               repository.owner.login === 'yonguelink',
           )
-          .sort((a, b) => {
-            if (a.pushed_at >= b.pushed_at) {
-              return 0;
-            }
-            return 1;
-          })
+          .sort(this.sortRepositories)
           // limit to 10 projects to keep this sightly
-          .slice(0, 10)
-          .map(
-            (repository) =>
-              <Project>{
-                name: repository.name,
-                description: repository.description,
-                link: repository.homepage || repository.html_url,
-              },
-          )
-          .concat(this.projects),
+          .slice(0, 10),
       ),
+      mergeMap((repository) =>
+        this.githubService.getRepositoryImage(repository),
+      ),
+      toArray(),
+      map((repositories) => repositories.sort(this.sortRepositories)),
+      map((repositories) =>
+        repositories.map(
+          (repository) =>
+            <Project>{
+              name: repository.name,
+              description: repository.description,
+              link: repository.homepage || repository.html_url,
+              image: repository.image,
+            },
+        ),
+      ),
+      map((repositories) => repositories.concat(this.projects)),
     );
   }
 }

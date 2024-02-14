@@ -16,4 +16,5 @@ export interface Repository {
   fork: boolean;
   size: number;
   description: string;
+  image?: URL;
 }

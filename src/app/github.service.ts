@@ -1,6 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Repository } from './github/repository';
+import { RepositoryImage } from './github/repository-image';
+import { map } from 'rxjs';
+import { GraphQlResponse } from './github/graphqlResponse';
 
 @Injectable({
   providedIn: 'root',
@@ -9,15 +12,36 @@ export class GithubService {
   readonly baseUrl = 'https://api.github.com';
   constructor(private httpClient: HttpClient) {}
 
-  getRepositories() {
-    const headers = new HttpHeaders();
-    headers.set(
+  getHeaders() {
+    return new HttpHeaders().set(
       'authorization',
-      `Bearer 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`,
+      // token from throwawaygithubaccount
+      'Bearer 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',
     );
+  }
+
+  getRepositories() {
     return this.httpClient.get<Repository[]>(
       `${this.baseUrl}/users/yonguelink/repos`,
-      { headers },
+      { headers: this.getHeaders() },
     );
+  }
+
+  getRepositoryImage(repository: Repository) {
+    const query = `{
+      repository(owner: "${repository.owner.login}", name: "${repository.name}") {
+        openGraphImageUrl
+      }
+    }`;
+    return this.httpClient
+      .post<
+        GraphQlResponse<RepositoryImage>
+      >(`${this.baseUrl}/graphql`, { query }, { headers: this.getHeaders() })
+      .pipe(
+        map((response) => {
+          repository.image = response.data.repository.openGraphImageUrl;
+          return repository;
+        }),
+      );
   }
 }
