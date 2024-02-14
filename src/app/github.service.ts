@@ -16,7 +16,7 @@ export class GithubService {
     return new HttpHeaders().set(
       'authorization',
       // token from throwawaygithubaccount
-      'Bearer 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',
+      'Bearer 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',
     );
   }
 
