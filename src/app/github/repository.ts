@@ -17,4 +17,5 @@ export interface Repository {
   size: number;
   description: string;
   image?: URL;
+  pushedAt?: Date;
 }

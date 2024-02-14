@@ -14,51 +14,51 @@ export class ProjectsService {
       link: new URL(
         'https://www.wolterskluwer.com/en-ca/solutions/cch-ifirm/cch-ifirm-tracking',
       ),
-      // image: new URL(
-      //   'https://isaacotherrien.work/images/fulls/isaacotherrien.png',
-      // ),
+      image: new URL('/assets/taxprep-dashboard.jpg', window.location.origin),
       name: $localize`A PoC of what is now CCH iFirm Tracking, a trello board for accountants' tax season`,
     },
     {
       description: $localize`Hackaton: git for Taxprep`,
       link: new URL('https://github.com/Normis/VikingFS'),
-      // image: new URL(
-      //   'https://isaacotherrien.work/images/fulls/isaacotherrien.png',
-      // ),
       name: $localize`VikingFS`,
     },
     {
-      description: $localize`Aster's website`,
-      link: new URL('https://isaacotherrien.work/'),
-      // image: new URL(
-      //   'https://isaacotherrien.work/images/fulls/isaacotherrien.png',
-      // ),
-      name: $localize`Aster's website`,
+      description: $localize`Aster's Telescope Control`,
+      link: new URL('https://www.asterbsl.ca/'),
+      name: $localize`A website connected to a telescope, allowing clients to reserve & use the telescope to take pictures`,
     },
   ];
   constructor(private githubService: GithubService) {}
 
-  private sortRepositories(a: Repository, b: Repository) {
-    if (a.pushed_at >= b.pushed_at) {
-      return 0;
+  private sortRepositories(a: Repository, b: Repository): number {
+    if (a.pushedAt! < b.pushedAt!) {
+      return 1;
     }
-    return 1;
+    if (a.pushedAt! > b.pushedAt!) {
+      return -1;
+    }
+    return 0;
   }
 
   getProjects() {
     return this.githubService.getRepositories().pipe(
       mergeMap((repositories) =>
         repositories
+          .map((repository) => {
+            repository.pushedAt = new Date(repository.pushed_at);
+            return repository;
+          })
           .filter(
             (repository) =>
               !repository.fork &&
               !repository.disabled &&
+              repository.pushedAt !== undefined &&
               repository.description !== null &&
               repository.language !== null &&
               repository.owner.login === 'yonguelink',
           )
           .sort(this.sortRepositories)
-          // limit to 10 projects to keep this sightly
+          // limit to 10 projects to keep this sightly & reduce load on GitHub's API
           .slice(0, 10),
       ),
       mergeMap((repository) =>
@@ -74,6 +74,7 @@ export class ProjectsService {
               description: repository.description,
               link: repository.homepage || repository.html_url,
               image: repository.image,
+              updatedAt: new Date(repository.pushed_at),
             },
         ),
       ),
