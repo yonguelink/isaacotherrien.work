@@ -6,6 +6,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { TitleCasePipe } from '@angular/common';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { provideMarkdown } from 'ngx-markdown';
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,5 +15,6 @@ export const appConfig: ApplicationConfig = {
     TitleCasePipe,
     provideHttpClient(),
     provideMarkdown({ loader: HttpClient }),
+    provideClientHydration(),
   ],
 };
