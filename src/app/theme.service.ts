@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { AfterRenderPhase, Injectable, afterNextRender } from '@angular/core';
 
 const darkThemeName = $localize`dark`;
 const lightThemeName = $localize`light`;
@@ -7,12 +7,17 @@ const lightThemeName = $localize`light`;
   providedIn: 'root',
 })
 export class ThemeService {
-  private darkMode: boolean;
+  private darkMode: boolean = true;
   private readonly lightThemeClass = 'light-theme';
 
   constructor() {
-    this.darkMode = this.defaultIsDarkMode();
-    this.setTheme(this.darkMode);
+    afterNextRender(
+      () => {
+        this.darkMode = this.defaultIsDarkMode();
+        this.setTheme(this.darkMode);
+      },
+      { phase: AfterRenderPhase.MixedReadWrite },
+    );
   }
 
   private defaultIsDarkMode(): boolean {

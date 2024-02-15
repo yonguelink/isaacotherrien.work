@@ -14,7 +14,6 @@ export class ProjectsService {
       link: new URL(
         'https://www.wolterskluwer.com/en-ca/solutions/cch-ifirm/cch-ifirm-tracking',
       ),
-      image: new URL('/assets/taxprep-dashboard.jpg', window.location.origin),
       name: $localize`A PoC of what is now CCH iFirm Tracking, a trello board for accountants' tax season`,
     },
     {

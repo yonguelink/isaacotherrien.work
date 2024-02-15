@@ -4,6 +4,7 @@ import { Repository } from './github/repository';
 import { RepositoryImage } from './github/repository-image';
 import { map } from 'rxjs';
 import { GraphQlResponse } from './github/graphqlResponse';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -13,12 +14,9 @@ export class GithubService {
   constructor(private httpClient: HttpClient) {}
 
   getHeaders() {
-    return new HttpHeaders().set(
-      'authorization',
-      // token from throwawaygithubaccount
-      // TODO: Make this work in dev too plz
-      `Bearer ${(<any>window).GITHUB_TOKEN}`,
-    );
+    return new HttpHeaders({
+      authorization: `Bearer ${environment.githubToken}`,
+    });
   }
 
   getRepositories() {

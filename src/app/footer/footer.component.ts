@@ -23,7 +23,7 @@ export class FooterComponent {
   ) {
     iconRegistry.addSvgIcon(
       name,
-      sanitizer.bypassSecurityTrustResourceUrl(`assets/${name}.svg`),
+      sanitizer.bypassSecurityTrustResourceUrl(`/assets/${name}.svg`),
     );
   }
 }

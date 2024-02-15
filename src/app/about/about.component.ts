@@ -9,8 +9,8 @@ import { MarkdownComponent } from 'ngx-markdown';
   styleUrl: './about.component.sass',
 })
 export class AboutComponent {
-  markdownFilePath: string;
+  markdownFilePath: string = '';
   constructor(@Inject(LOCALE_ID) locale: string) {
-    this.markdownFilePath = `assets/content/${locale}/about.md`;
+    this.markdownFilePath = `/assets/content/${locale}/about.md`;
   }
 }
