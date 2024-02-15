@@ -8,7 +8,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:isaacotherrien.work": "node dist/isaacotherrien.work/server/en/server.mjs"
+    "serve:ssr:isaacotherrien.work": "node dist/isaacotherrien.work/server/en/server.mjs",
+    "lint": "prettier . --write"
   },
   "dependencies": {
     "@angular/animations": "^17.2.1",
@@ -40,7 +41,7 @@
     "@ngx-env/builder": "^17.1.3",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
-    "@types/node": "^18.18.0",
+    "@types/node": "^20.11.19",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
