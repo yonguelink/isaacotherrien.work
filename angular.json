@@ -79,7 +79,7 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
-              "localize": ["en"]
+              "localize": false
             },
             "development-fr": {
               "optimization": false,
