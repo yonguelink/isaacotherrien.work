@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start-ssl": "ng serve --host 0.0.0.0 --disable-host-check --ssl",
-    "build": "ng build",
+    "build": "ng build && ng build -c production-localize",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:isaacotherrien.work": "node dist/isaacotherrien.work/server/en/server.mjs",
