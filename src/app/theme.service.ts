@@ -1,8 +1,5 @@
 import { AfterRenderPhase, Injectable, afterNextRender } from '@angular/core';
 
-const darkThemeName = $localize`dark`;
-const lightThemeName = $localize`light`;
-
 @Injectable({
   providedIn: 'root',
 })
@@ -48,14 +45,6 @@ export class ThemeService {
     }
 
     this.setMarkdownStyle();
-  }
-
-  getThemeName(isDarkMode: boolean = this.darkMode) {
-    if (isDarkMode) {
-      return darkThemeName;
-    } else {
-      return lightThemeName;
-    }
   }
 
   private setMarkdownStyle() {

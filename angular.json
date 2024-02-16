@@ -92,7 +92,9 @@
         "extract-i18n": {
           "builder": "@ngx-env/builder:extract-i18n",
           "options": {
-            "buildTarget": "isaacotherrien.work:build"
+            "buildTarget": "isaacotherrien.work:build",
+            "format": "json",
+            "outputPath": "src/i18n"
           }
         },
         "test": {
