@@ -25,4 +25,4 @@ working as a Software Developer at Sherweb remotely. In 2022, I moved to
 Saint-Alexandre-de-Kamouraska, still working for Sherweb for the C2 Team. In
 2024, I'm opening my horizon for a new challenge by leaving Sherweb...
 
-You can send me an email to have my resumé.
+You can send me an email to have my resume.
