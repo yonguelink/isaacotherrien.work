@@ -1,9 +1,8 @@
 <div class="header">
   <div class="left">
-    <div
-      class="avatar"
-      [style.background-image]="'url(\'' + (avatarUrl | async) + '\')'"
-    ></div>
+    <div class="avatar">
+      <img [src]="avatarUrl | async" />
+    </div>
 
     <div class="me">
       <div class="name"><span class="accent">Isaac</span> Ouellet-Therrien</div>
