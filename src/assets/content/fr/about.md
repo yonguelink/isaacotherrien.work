@@ -1,9 +1,5 @@
 ## À propos de moi
 
-This text really needs some re-work, also probably some spacing and everything.
-
-Don't worry, this is now _markdown_ so we can easily have fun with this!
-
 Je suis un programmeur Full Stack qui aime découvrir et inventer. Je suis
 capable de travailler sur de multiples projets simultanément. Je viens de la
 ville de Rivière-du-Loup, une petite ville à l’est de la province de Québec, au

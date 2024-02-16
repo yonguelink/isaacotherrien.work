@@ -1,11 +1,12 @@
 import { PlatformLocation } from '@angular/common';
 import { Component, Inject, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'menu',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
 })

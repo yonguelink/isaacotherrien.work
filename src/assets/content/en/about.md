@@ -1,9 +1,5 @@
 ## About Me
 
-This text really needs some re-work, also probably some spacing and everything.
-
-Don't worry, this is now _markdown_ so we can easily have fun with this!
-
 I'm a Full Stack Developer, who loves discovering and inventing. I'm from
 Rivière-du-Loup, a small town in the east of the Quebec province, in Canada. In
 high school, I started to view computers, programming (and games) as something I

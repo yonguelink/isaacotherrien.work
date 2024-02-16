@@ -3,13 +3,14 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ThemeToggle } from '../theme-toggle/theme-toggle';
 import { MenuComponent } from '../menu/menu.component';
+import { RouterLink } from '@angular/router';
 
 const email = 'isaac.computing@gmail.com';
 
 @Component({
   selector: 'header',
   standalone: true,
-  imports: [ThemeToggle, FormsModule, CommonModule, MenuComponent],
+  imports: [ThemeToggle, FormsModule, CommonModule, MenuComponent, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

@@ -9,4 +9,10 @@
   @include footer.background($theme);
   @include menu.linkColors($theme);
   @include contact.snack($theme);
+
+  .markdown-body {
+    a {
+      color: mat.get-theme-color($theme, accent);
+    }
+  }
 }
