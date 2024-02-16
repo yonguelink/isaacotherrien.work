@@ -89,10 +89,36 @@
           },
           "defaultConfiguration": "development"
         },
+        "build-i18n": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "localize": true,
+            "outputPath": "dist/isaacotherrien.work",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "sass",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "all"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "extract-i18n": {
           "builder": "@ngx-env/builder:extract-i18n",
           "options": {
-            "buildTarget": "isaacotherrien.work:build",
+            "buildTarget": "isaacotherrien.work:build-i18n",
             "format": "json",
             "outputPath": "src/i18n"
           }
