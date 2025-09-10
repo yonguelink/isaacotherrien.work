@@ -21,7 +21,7 @@
     "@angular/material": "17.2.0",
     "@angular/platform-browser": "^17.3.12",
     "@angular/platform-browser-dynamic": "^17.3.12",
-    "@angular/platform-server": "^17.3.12",
+    "@angular/platform-server": "^20.3.0",
     "@angular/router": "^17.3.12",
     "@angular/ssr": "^17.2.0",
     "clipboard": "2.0.11",
@@ -35,7 +35,7 @@
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.3.17",
+    "@angular-devkit/build-angular": "^20.3.0",
     "@angular/cli": "^17.2.0",
     "@angular/compiler-cli": "^17.3.12",
     "@angular/localize": "17.3.12",
