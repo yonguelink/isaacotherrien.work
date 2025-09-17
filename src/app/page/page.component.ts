@@ -5,15 +5,14 @@ import { StartOfPageComponent } from '../start-of-page/start-of-page.component';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'page',
-  standalone: true,
-  imports: [
-    HeaderComponent,
-    FooterComponent,
-    StartOfPageComponent,
-    RouterOutlet,
-  ],
-  templateUrl: './page.component.html',
-  styleUrl: './page.component.sass',
+    selector: 'page',
+    imports: [
+        HeaderComponent,
+        FooterComponent,
+        StartOfPageComponent,
+        RouterOutlet,
+    ],
+    templateUrl: './page.component.html',
+    styleUrl: './page.component.sass'
 })
 export class PageComponent {}

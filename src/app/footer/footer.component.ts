@@ -3,11 +3,10 @@ import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'footer',
-  standalone: true,
-  imports: [MatIconModule],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.sass',
+    selector: 'footer',
+    imports: [MatIconModule],
+    templateUrl: './footer.component.html',
+    styleUrl: './footer.component.sass'
 })
 export class FooterComponent {
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {

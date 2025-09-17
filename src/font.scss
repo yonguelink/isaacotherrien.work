@@ -23,5 +23,5 @@ $fontFamily: "Monaspace Krypton";
 }
 
 @function getTypography() {
-  @return mat.define-typography-config($font-family: $fontFamily);
+  @return mat.m2-define-typography-config($font-family: $fontFamily);
 }
