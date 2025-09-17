@@ -1,3 +1,3 @@
 # isaacotherrien.work
 
-Code & content for my website using angular 17
+Code & content for my website using angular
