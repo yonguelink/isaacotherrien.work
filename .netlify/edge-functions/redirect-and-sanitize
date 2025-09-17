@@ -1,0 +1,8 @@
+// .netlify/edge-functions/redirect-and-sanitize
+export default (request, context) => {
+  return context.next();
+};
+
+export const config = {
+  path: "/*",
+};
