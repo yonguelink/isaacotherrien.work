@@ -2,10 +2,10 @@
 @use "theme-components" as components;
 
 @mixin theme($typography) {
-  $primary: mat.define-palette(mat.$grey-palette, 900, 700, 900, 50);
-  $accent: mat.define-palette(mat.$pink-palette, A400, 500, 800, 400);
+  $primary: mat.m2-define-palette(mat.$m2-grey-palette, 900, 700, 900, 50);
+  $accent: mat.m2-define-palette(mat.$m2-pink-palette, A400, 500, 800, 400);
 
-  $theme: mat.define-dark-theme(
+  $theme: mat.m2-define-dark-theme(
     (
       color: (
         primary: $primary,
