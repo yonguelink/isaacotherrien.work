@@ -15,6 +15,9 @@ command = "npm run build"
     [context.main.build]
     command = "npm run build"
 
+[[plugins]]
+  package="@netlify/angular-runtime"
+
 [[redirects]]
   from = "/"
   to = "/en/"
