@@ -8,11 +8,10 @@ import { RouterLink } from '@angular/router';
 const email = 'isaac.computing@gmail.com';
 
 @Component({
-  selector: 'header',
-  standalone: true,
-  imports: [ThemeToggle, FormsModule, CommonModule, MenuComponent, RouterLink],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+    selector: 'header',
+    imports: [ThemeToggle, FormsModule, CommonModule, MenuComponent, RouterLink],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   avatarUrl: Promise<string>;

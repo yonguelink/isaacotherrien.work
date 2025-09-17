@@ -7,17 +7,16 @@ import { ContactComponent } from '../contact/contact.component';
 import { StartOfPageComponent } from '../start-of-page/start-of-page.component';
 
 @Component({
-  selector: 'home',
-  standalone: true,
-  imports: [
-    HeaderComponent,
-    AboutComponent,
-    ProjectsComponent,
-    ContactComponent,
-    FooterComponent,
-    StartOfPageComponent,
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+    selector: 'home',
+    imports: [
+        HeaderComponent,
+        AboutComponent,
+        ProjectsComponent,
+        ContactComponent,
+        FooterComponent,
+        StartOfPageComponent,
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {}

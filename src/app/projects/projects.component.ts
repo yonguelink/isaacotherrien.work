@@ -6,11 +6,10 @@ import { Project } from '../project';
 import { ProjectsService } from '../projects.service';
 
 @Component({
-  selector: 'projects',
-  standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatIconModule],
-  templateUrl: './projects.component.html',
-  styleUrl: './projects.component.sass',
+    selector: 'projects',
+    imports: [MatCardModule, MatButtonModule, MatIconModule],
+    templateUrl: './projects.component.html',
+    styleUrl: './projects.component.sass'
 })
 export class ProjectsComponent {
   projects: Project[] = [];
