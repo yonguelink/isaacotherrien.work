@@ -118,7 +118,8 @@
               "buildTarget": "isaacotherrien.work:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {}
         },
         "build-i18n": {
           "builder": "@angular/build:application",
