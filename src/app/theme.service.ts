@@ -8,13 +8,12 @@ export class ThemeService {
   private readonly lightThemeClass = 'light-theme';
 
   constructor() {
-    afterNextRender(
-      { mixedReadWrite: () => {
+    afterNextRender({
+      mixedReadWrite: () => {
         this.darkMode = this.defaultIsDarkMode();
         this.setTheme(this.darkMode);
-    } },
-      ,
-    );
+      },
+    });
   }
 
   private defaultIsDarkMode(): boolean {
