@@ -1,4 +1,4 @@
-import { AfterRenderPhase, Injectable, afterNextRender } from '@angular/core';
+import { Injectable, afterNextRender } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -9,11 +9,11 @@ export class ThemeService {
 
   constructor() {
     afterNextRender(
-      () => {
+      { mixedReadWrite: () => {
         this.darkMode = this.defaultIsDarkMode();
         this.setTheme(this.darkMode);
-      },
-      { phase: AfterRenderPhase.MixedReadWrite },
+    } },
+      ,
     );
   }
 
