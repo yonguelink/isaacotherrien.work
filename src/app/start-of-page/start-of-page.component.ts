@@ -3,10 +3,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    selector: 'start-of-page',
-    imports: [MatButtonModule, MatIconModule],
-    templateUrl: './start-of-page.component.html',
-    styleUrl: './start-of-page.component.sass'
+  selector: 'start-of-page',
+  imports: [MatButtonModule, MatIconModule],
+  templateUrl: './start-of-page.component.html',
+  styleUrl: './start-of-page.component.sass',
 })
 export class StartOfPageComponent {
   visible: boolean = false;
@@ -19,7 +19,7 @@ export class StartOfPageComponent {
     });
   }
 
-  @HostListener('document:scroll', ['$event'])
+  @HostListener('document:scroll', [])
   onScroll() {
     this.visible = window.scrollY > 500;
   }
