@@ -2,10 +2,10 @@ import { Component, Inject, LOCALE_ID } from '@angular/core';
 import { MarkdownComponent } from 'ngx-markdown';
 
 @Component({
-    selector: 'about',
-    imports: [MarkdownComponent],
-    templateUrl: './about.component.html',
-    styleUrl: './about.component.sass'
+  selector: 'about',
+  imports: [MarkdownComponent],
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.sass',
 })
 export class AboutComponent {
   markdownFilePath: string = '';

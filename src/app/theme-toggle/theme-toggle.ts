@@ -4,9 +4,9 @@ import { ThemeService } from '../theme.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-    selector: 'theme-toggle',
-    templateUrl: 'theme-toggle.html',
-    imports: [MatSlideToggle, FormsModule]
+  selector: 'theme-toggle',
+  templateUrl: 'theme-toggle.html',
+  imports: [MatSlideToggle, FormsModule],
 })
 export class ThemeToggle implements AfterViewInit {
   @ViewChild('darkModeSwitch', { read: ElementRef }) element:

@@ -15,17 +15,17 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { EmailService } from '../email.service';
 
 @Component({
-    selector: 'contact',
-    imports: [
-        MatFormFieldModule,
-        ReactiveFormsModule,
-        MatInputModule,
-        FormsModule,
-        MatButtonModule,
-        MatProgressSpinnerModule,
-    ],
-    templateUrl: './contact.component.html',
-    styleUrl: './contact.component.sass'
+  selector: 'contact',
+  imports: [
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+  ],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.sass',
 })
 export class ContactComponent {
   form = new FormGroup({
